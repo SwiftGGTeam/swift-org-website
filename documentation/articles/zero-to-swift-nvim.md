@@ -1,38 +1,28 @@
 ---
 layout: page
 date: 2024-06-04 15:13:07
-title: Configuring Neovim for Swift Development
+title: 为 Swift 开发配置 Neovim
 author: [etcwilde]
 ---
 
-[Neovim](https://neovim.io) is a modern reimplementation of _Vim_, a popular terminal-based text
-editor.
-Neovim adds new features like asynchronous operations and powerful Lua bindings
-for a snappy editing experience, in addition to the improvements _Vim_ brings to
-the original _Vi_ editor.
+[Neovim](https://neovim.io) 是 vim 的现代重写版本，_Vim_ 是一个流行的基于终端的文本编辑器。
 
-This article walks you through configuring Neovim for Swift development,
-providing configurations for various plugins to build a working Swift editing
-experience.
-The configuration files are built up step by step and the end of the article contains the
-fully assembled versions of those files.
-It is not a tutorial on how to use Neovim and assumes some familiarity
-with modal text editors like _Neovim_, _Vim_, or _Vi_.
-We are also assuming that you have already installed a Swift toolchain on your
-computer. If not, please see the
-[Swift installation instructions](https://www.swift.org/install).
+Neovim 引入了异步操作和强大的 Lua 绑定等新功能，带来了流畅的编辑体验，并在 Vim 对原始 Vi 编辑器的改进基础上更进一步。
 
-Although the article references Ubuntu 22.04, the configuration itself works on
-any operating system where a recent version of Neovim and a Swift toolchain is
-available.
+本文将指导你如何配置 Neovim 进行 Swift 开发，提供各种插件的配置，以构建一个实用的 Swift 编辑环境。
+配置文件会逐步构建，文章结尾将包含完整版本的配置文件。
+这不是一篇 Neovim 使用教程，假设你对 Neovim、Vim 或 Vi 等模式化文本编辑器有一定的了解。
+我们还假设你的电脑上已经安装了 Swift 工具链。如果尚未安装，请参阅 [Swift 安装指南](https://www.swift.org/install)。
 
-Basic setup and configuration includes:
+尽管本文提到的是 Ubuntu 22.04，但配置本身适用于任何安装了 Neovim 最新版本和 Swift 工具链的操作系统。
 
-1. Installing Neovim.
-2. Installing `lazy.nvim` to manage our plugins.
-3. Configuring the SourceKit-LSP server.
-4. Setting up Language-Server-driven code completion with _nvim-cmp_.
-5. Setting up snippets with _LuaSnip_.
+基本设置和配置包括：
+
+1. 安装 Neovim。
+2. 安装 lazy.nvim 以管理插件。
+3. 配置 SourceKit-LSP 服务器。
+4. 使用 nvim-cmp 设置基于语言服务器的代码补全。
+5. 使用 LuaSnip 设置代码片段。
 
 The following sections are provided to help guide you through the setup:
 
