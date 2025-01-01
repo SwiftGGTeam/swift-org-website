@@ -1,7 +1,7 @@
 ---
 redirect_from: "server/guides/packaging"
 layout: page
-title: Packaging Applications for Deployment
+title: 将应用程序打包以供部署
 ---
 
 一旦应用程序为生产环境构建完成，它仍然需要打包才能部署到服务器上。有几种策略可以用于打包 Swift 应用程序以进行部署。
