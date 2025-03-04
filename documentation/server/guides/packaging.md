@@ -1,106 +1,110 @@
 ---
 redirect_from: "server/guides/packaging"
 layout: page
-title: Packaging Applications for Deployment
+title: 打包应用程序以供部署
 ---
 
-Once an application is built for production, it still needs to be packaged before it can be deployed to servers. There are several strategies for packaging Swift applications for deployment.
+一旦应用程序构建用于生产，它仍然需要打包才能部署到服务器上。打包 Swift 应用程序以进行部署有多种策略。
 
 ## Docker
 
-One of the most popular ways to package applications these days is using container technologies such as [Docker](https://www.docker.com).
+如今，使用容器技术（如 [Docker](https://www.docker.com)）打包应用程序是最流行的方法之一。
 
-Using Docker's tooling, we can build and package the application as a Docker image, publish it to a Docker repository, and later launch it directly on a server or on a platform that supports Docker deployments such as [Kubernetes](https://kubernetes.io). Many public cloud providers including AWS, GCP, Azure, IBM and others encourage this kind of deployment.
+使用 Docker 的工具，我们可以将应用程序构建并打包为 Docker 镜像，将其发布到 Docker 仓库，然后直接在服务器上或支持 Docker 部署的平台（如 [Kubernetes](https://kubernetes.io)）上启动它。包括 AWS、GCP、Azure、IBM 在内的许多公共云提供商都鼓励这种部署方式。
 
-Here is an example `Dockerfile` that builds and packages the application on top of CentOS:
+下面是一个在 CentOS 上构建和打包应用程序的 `Dockerfile` 示例：
+
 
 ```Dockerfile
 #------- build -------
 FROM swift:centos8 as builder
 
-# set up the workspace
+# 设置工作区
 RUN mkdir /workspace
 WORKDIR /workspace
 
-# copy the source to the docker image
+# 将源代码复制到 docker 镜像
 COPY . /workspace
 
 RUN swift build -c release --static-swift-stdlib
 
 #------- package -------
 FROM centos
-# copy executables
+# 复制可执行文件
 COPY --from=builder /workspace/.build/release/<executable-name> /
 
-# set the entry point (application name)
+# 设置入口点（应用程序名称）
 CMD ["<executable-name>"]
 ```
 
-To create a local Docker image from the `Dockerfile` use the `docker build` command from the application's source location, e.g.:
+要使用 `Dockerfile` 从应用程序的源位置创建本地 Docker 镜像，请使用 `docker build` 命令，例如：
 
 ```bash
 $ docker build . -t <my-app>:<my-app-version>
 ```
 
-To test the local image use the `docker run` command, e.g.:
+要测试本地镜像，请使用 `docker run` 命令，例如：
 
 ```bash
 $ docker run <my-app>:<my-app-version>
 ```
 
-Finally, use the `docker push` command to publish the application's Docker image to a Docker repository of your choice, e.g.:
+最后，使用 `docker push` 命令将应用程序的 Docker 镜像发布到您选择的 Docker 仓库，例如：
 
 ```bash
 $ docker tag <my-app>:<my-app-version> <docker-hub-user>/<my-app>:<my-app-version>
 $ docker push <docker-hub-user>/<my-app>:<my-app-version>
 ```
 
-At this point, the application's Docker image is ready to be deployed to the server hosts (which need to run docker), or to one of the platforms that supports Docker deployments.
+此时，应用程序的 Docker 镜像已准备好部署到运行 docker 的服务器主机，或支持 Docker 部署的平台。
 
-See [Docker's documentation](https://docs.docker.com/engine/reference/commandline/) for more complete information about Docker.
+有关 Docker 的更多完整信息，请参阅 [Docker 的文档](https://docs.docker.com/engine/reference/commandline/)。
+
 
 ### Distroless
 
-[Distroless](https://github.com/GoogleContainerTools/distroless) is a project by Google that attempts to create minimal images containing only the application and its runtime dependencies. They do not contain package managers, shells or any other programs you would expect to find in a standard Linux distribution.
+[Distroless](https://github.com/GoogleContainerTools/distroless) 是 Google 的一个项目，旨在创建仅包含应用程序及其运行时依赖项的最小镜像。它们不包含包管理器、shell 或任何其他您期望在标准 Linux 发行版中找到的程序。
 
-Since distroless supports Docker and is based on Debian, packaging a Swift application on it is fairly similar to the Docker process above. Here is an example `Dockerfile` that builds and packages the application on top of a distroless's C++ base image:
+
+由于 distroless 支持 Docker 并基于 Debian，将 Swift 应用程序打包到其中的过程与上述 Docker 过程十分相似。下面是一个在 distroless 的 C++ 基础镜像上构建和打包应用程序的 `Dockerfile` 示例：
 
 ```Dockerfile
 #------- build -------
-# Building using Ubuntu Bionic since its compatible with Debian runtime
+# 使用 Ubuntu Bionic 构建，因为它与 Debian 运行时兼容
 FROM swift:bionic as builder
 
-# set up the workspace
+# 设置工作区
 RUN mkdir /workspace
 WORKDIR /workspace
 
-# copy the source to the docker image
+# 将源代码复制到 docker 镜像
 COPY . /workspace
 
 RUN swift build -c release --static-swift-stdlib
 
 #------- package -------
-# Running on distroless C++ since it includes
-# all(*) the runtime dependencies Swift programs need
+# 在 distroless C++ 上运行，因为它包含
+# Swift 程序需要的所有(*)运行时依赖项
 FROM gcr.io/distroless/cc-debian10
-# copy executables
+# 复制可执行文件
 COPY --from=builder /workspace/.build/release/<executable-name> /
 
-# set the entry point (application name)
+# 设置入口点（应用程序名称）
 CMD ["<executable-name>"]
 ```
 
-Note the above uses `gcr.io/distroless/cc-debian10` as the runtime image which should work for Swift programs that do not use `FoundationNetworking` or `FoundationXML`. In order to provide more complete support we (the community) could put in a PR into distroless to introduce a base image for Swift that includes `libcurl` and `libxml` which are required for `FoundationNetworking` and `FoundationXML` respectively.
+注意，上述使用 `gcr.io/distroless/cc-debian10` 作为运行时镜像，这对于不使用 `FoundationNetworking` 或 `FoundationXML` 的 Swift 程序应该有效。为了提供更完整的支持，我们（社区）可以向 distroless 提交 PR，引入一个包含 `libcurl` 和 `libxml` 的 Swift 基础镜像，分别用于 `FoundationNetworking` 和 `FoundationXML`。
 
-## Archive (Tarball, ZIP file, etc.)
 
-Since cross-compiling Swift for Linux is not (yet) supported on Mac or Windows, we need to use virtualization technologies like Docker to compile applications we are targeting to run on Linux.
+## 归档（Tarball、 ZIP 文件等）
 
-That said, this does not mean we must also package the applications as Docker images in order to deploy them. While using Docker images for deployment is convenient and popular, an application can also be packaged using a simple and lightweight archive format like tarball or ZIP file, then uploaded to the server where it can be extracted and run.
+由于在 Mac 或 Windows 上不（尚未）支持交叉编译 Swift 到 Linux，我们需要使用虚拟化技术（如 Docker）来编译我们目标运行在 Linux 上的应用程序。
 
-Here is an example of using Docker and `tar` to build and package the application for deployment on Ubuntu servers:
+这并不意味着我们必须将应用程序也打包为 Docker 镜像才能部署。虽然使用 Docker 镜像进行部署方便且流行，但应用程序也可以使用简单且轻量的归档格式（如 tarball 或 ZIP 文件）打包，然后上传到服务器，在服务器上解压并运行。
 
-First, use the `docker run` command from the application's source location to build it:
+以下是使用 Docker 和 `tar` 构建和打包应用程序以在 Ubuntu 服务器上部署的示例：
+
+首先，从应用程序的源位置使用 `docker run` 命令构建它：
 
 ```bash
 $ docker run --rm \
@@ -110,9 +114,10 @@ $ docker run --rm \
   /bin/bash -cl "swift build -c release --static-swift-stdlib"
 ```
 
-Note we are bind mounting the source directory so that the build writes the build artifacts to the local drive from which we will package them later.
+注意，我们正在绑定挂载源目录，以便构建将构建产物写入本地驱动器，我们稍后将从中打包它们。
 
-Next we can create a staging area with the application's executable:
+接下来，我们可以创建一个包含应用程序可执行文件的暂存区：
+
 
 ```bash
 $ docker run --rm \
@@ -124,36 +129,36 @@ $ docker run --rm \
      cp -P .build/release/<executable-name> .build/install/'
 ```
 
-Note this command could be combined with the build command above--we separated them to make the example more readable.
+注意，此命令可以与上面的构建命令结合使用——我们将它们分开以使示例更具可读性。
 
-Finally, create a tarball from the staging directory:
+最后，从暂存目录创建一个 tarball：
 
 ```bash
 $ tar cvzf <my-app>-<my-app-version>.tar.gz -C .build/install .
 ```
 
-We can test the integrity of the tarball by extracting it to a directory and running the application in a Docker runtime container:
+我们可以通过将 tarball 解压到一个目录并在 Docker 运行时容器中运行应用程序来测试 tarball 的完整性：
 
 ```bash
 $ cd <extracted directory>
 $ docker run -v "$PWD:/app" -w /app bionic ./<executable-name>
 ```
 
-Deploying the application's tarball to the target server can be done using utilities like `scp`, or in a more sophisticated setup using configuration management system like `chef`, `puppet`, `ansible`, etc.
+可以使用 `scp` 等工具将应用程序的 tarball 部署到目标服务器，或者在更复杂的设置中使用配置管理系统（如 `chef`、`puppet`、`ansible` 等）。
 
 
-## Source Distribution
+## 源代码分发
 
-Another distribution technique popular with dynamic languages like Ruby or Javascript is distributing the source to the server, then compiling it on the server itself.
+另一种在动态语言（如 Ruby 或 Javascript）中流行的分发技术是将源代码分发到服务器，然后在服务器上编译。
 
-To build Swift applications directly on the server, the server must have the correct Swift toolchain installed. [Swift.org](/download/#linux) publishes toolchains for a variety of Linux distributions, make sure to use the one matching your server Linux version and desired Swift version.
+要直接在服务器上构建 Swift 应用程序，服务器必须安装正确的 Swift 工具链。[Swift.org](https://www.swift.org/download/#linux) 发布了适用于各种 Linux 发行版的工具链，请确保使用与您的服务器 Linux 版本和所需 Swift 版本匹配的工具链。
 
-The main advantage of this approach is that it is easy. Additional advantage is the server has the full toolchain (e.g. debugger) that can help troubleshoot issues "live" on the server.
+这种方法的主要优点是简单。额外的优点是服务器具有完整的工具链（例如调试器），可以帮助在服务器上“实时”排除问题。
 
-The main disadvantage of this approach that the server has the full toolchain (e.g. compiler) which means a sophisticated attacker can potentially find ways to execute code. They can also potentially gain access to the source code which might be sensitive. If the application code needs to be cloned from a private or protected repository, the server needs access to credentials which adds additional attack surface area.
+这种方法的主要缺点是服务器具有完整的工具链（例如编译器），这意味着精通技术的攻击者可能会找到执行代码的方法。他们还可能获得对源代码的访问权限，这而这些代码可能涉及敏感信息。如果应用程序代码需要从私有或受保护的存储库中克隆，服务器需要访问凭据，这增加了额外的攻击面。
 
-In most cases, source distribution is not advised due to these security concerns.
+在大多数情况下，由于这些安全问题，不建议使用源代码分发。
 
-## Static linking and Curl/XML
+## 静态链接和 Curl/XML
 
-**Note:** if you are compiling with `-static-stdlib` and using Curl with FoundationNetworking or XML with FoundationXML you must have libcurl and/or libxml2 installed on the target system for it to work.
+**注意：** 如果您使用 `-static-stdlib` 编译并使用 Curl 与 FoundationNetworking 或 XML 与 FoundationXML，您必须在目标系统上安装 libcurl 和/或 libxml2 才能使其工作。
