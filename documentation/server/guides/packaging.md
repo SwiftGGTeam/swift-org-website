@@ -1,10 +1,10 @@
 ---
 redirect_from: "server/guides/packaging"
 layout: page
-title: 将应用程序打包以供部署
+title: 打包应用程序以供部署
 ---
 
-一旦应用程序为生产环境构建完成，它仍然需要打包才能部署到服务器上。有几种策略可以用于打包 Swift 应用程序以进行部署。
+一旦应用程序构建用于生产，它仍然需要打包才能部署到服务器上。打包 Swift 应用程序以进行部署有多种策略。
 
 ## Docker
 
@@ -65,7 +65,8 @@ $ docker push <docker-hub-user>/<my-app>:<my-app-version>
 
 [Distroless](https://github.com/GoogleContainerTools/distroless) 是 Google 的一个项目，旨在创建仅包含应用程序及其运行时依赖项的最小镜像。它们不包含包管理器、shell 或任何其他您期望在标准 Linux 发行版中找到的程序。
 
-由于 distroless 支持 Docker 并基于 Debian，在其上打包 Swift 应用程序与上述 Docker 过程非常相似。下面是一个在 distroless 的 C++ 基础镜像上构建和打包应用程序的 `Dockerfile` 示例：
+
+由于 distroless 支持 Docker 并基于 Debian，将 Swift 应用程序打包到其中的过程与上述 Docker 过程十分相似。下面是一个在 distroless 的 C++ 基础镜像上构建和打包应用程序的 `Dockerfile` 示例：
 
 ```Dockerfile
 #------- build -------
@@ -95,7 +96,7 @@ CMD ["<executable-name>"]
 注意，上述使用 `gcr.io/distroless/cc-debian10` 作为运行时镜像，这对于不使用 `FoundationNetworking` 或 `FoundationXML` 的 Swift 程序应该有效。为了提供更完整的支持，我们（社区）可以向 distroless 提交 PR，引入一个包含 `libcurl` 和 `libxml` 的 Swift 基础镜像，分别用于 `FoundationNetworking` 和 `FoundationXML`。
 
 
-## Archive (Tarball, ZIP file, etc.)
+## 归档（Tarball、 ZIP 文件等）
 
 由于在 Mac 或 Windows 上不（尚未）支持交叉编译 Swift 到 Linux，我们需要使用虚拟化技术（如 Docker）来编译我们目标运行在 Linux 上的应用程序。
 
@@ -113,7 +114,7 @@ $ docker run --rm \
   /bin/bash -cl "swift build -c release --static-swift-stdlib"
 ```
 
-注意，我们正在绑定挂载源目录，以便构建将构建工件写入本地驱动器，我们稍后将从中打包它们。
+注意，我们正在绑定挂载源目录，以便构建将构建产物写入本地驱动器，我们稍后将从中打包它们。
 
 接下来，我们可以创建一个包含应用程序可执行文件的暂存区：
 
@@ -136,7 +137,7 @@ $ docker run --rm \
 $ tar cvzf <my-app>-<my-app-version>.tar.gz -C .build/install .
 ```
 
-我们可以通过将 tarball 解压到目录并在 Docker 运行时容器中运行应用程序来测试 tarball 的完整性：
+我们可以通过将 tarball 解压到一个目录并在 Docker 运行时容器中运行应用程序来测试 tarball 的完整性：
 
 ```bash
 $ cd <extracted directory>
@@ -146,17 +147,7 @@ $ docker run -v "$PWD:/app" -w /app bionic ./<executable-name>
 可以使用 `scp` 等工具将应用程序的 tarball 部署到目标服务器，或者在更复杂的设置中使用配置管理系统（如 `chef`、`puppet`、`ansible` 等）。
 
 
-## 源分发
-
-Another distribution technique popular with dynamic languages like Ruby or Javascript is distributing the source to the server, then compiling it on the server itself.
-
-To build Swift applications directly on the server, the server must have the correct Swift toolchain installed. [Swift.org](/download/#linux) publishes toolchains for a variety of Linux distributions, make sure to use the one matching your server Linux version and desired Swift version.
-
-The main advantage of this approach is that it is easy. Additional advantage is the server has the full toolchain (e.g. debugger) that can help troubleshoot issues "live" on the server.
-
-The main disadvantage of this approach that the server has the full toolchain (e.g. compiler) which means a sophisticated attacker can potentially find ways to execute code. They can also potentially gain access to the source code which might be sensitive. If the application code needs to be cloned from a private or protected repository, the server needs access to credentials which adds additional attack surface area.
-
-In most cases, source distribution is not advised due to these security concerns.
+## 源代码分发
 
 另一种在动态语言（如 Ruby 或 Javascript）中流行的分发技术是将源代码分发到服务器，然后在服务器上编译。
 
@@ -164,7 +155,7 @@ In most cases, source distribution is not advised due to these security concerns
 
 这种方法的主要优点是简单。额外的优点是服务器具有完整的工具链（例如调试器），可以帮助在服务器上“实时”排除问题。
 
-这种方法的主要缺点是服务器具有完整的工具链（例如编译器），这意味着复杂的攻击者可能会找到执行代码的方法。他们还可能获得对源代码的访问权限，这可能是敏感的。如果应用程序代码需要从私有或受保护的存储库中克隆，服务器需要访问凭据，这增加了额外的攻击面。
+这种方法的主要缺点是服务器具有完整的工具链（例如编译器），这意味着精通技术的攻击者可能会找到执行代码的方法。他们还可能获得对源代码的访问权限，这而这些代码可能涉及敏感信息。如果应用程序代码需要从私有或受保护的存储库中克隆，服务器需要访问凭据，这增加了额外的攻击面。
 
 在大多数情况下，由于这些安全问题，不建议使用源代码分发。
 
