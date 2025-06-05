@@ -20,7 +20,7 @@ atom: true
         <p>适用于 Linux、macOS 和 Windows 的工具</p>
         <h2>使用 Swift 创造</h2>
     </div>
-    <nav aria-label="开始使用 Swift">
+    <nav aria-label="Get started with Swift">
         <ul class="primary-links">
             {% for item in site.data.new-data.landing.get-started-primary %}
             <li>
