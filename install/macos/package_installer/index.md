@@ -1,27 +1,23 @@
 ---
 layout: page
-title: macOS Package Installer
+title: macOS 软件包安装器
 ---
 
-Xcode includes a release of Swift that is supported by Apple.
-You can try out a version that is still in development
-by downloading one of the packages from [download](/install/macos) page.
+Xcode 包含了一个由 Apple 官方支持的 Swift 版本。
+你可以从[下载页面](/install/macos)获取开发中的版本来尝试最新特性。
 
 <div class="warning" markdown="1">
-To submit to the App Store you must build your app using the version of Swift that comes included within Xcode.
+注意：如果要向 App Store 提交应用，你必须使用 Xcode 内置的 Swift 版本来构建你的应用。
 </div>
 
 <div class="warning" markdown="1">
-Xcode is not required to run the package installer or use an installed
-toolchain. However, when Xcode is not installed, the functionality of the Swift
-Package Manager may be limited due to some [outstanding issues](https://github.com/swiftlang/swift-package-manager/issues/4396).
+注意：运行软件包安装器或使用已安装的工具链并不需要 Xcode。但是，当未安装 Xcode 时，由于一些[未解决的问题](https://github.com/swiftlang/swift-package-manager/issues/4396)，Swift Package Manager 的功能可能会受到限制。
 </div>
 
-0. Download a latest Swift release
+0. 下载最新的 Swift 发行版
    ([{{ site.data.builds.swift_releases.last.name }}](/install/macos))
-   or development [snapshot](/install/macos/#development-snapshots) package.
-   Make sure that your system meets the aforecited requirements for
-   this package.
+   或开发版本的[快照包](/install/macos/#development-snapshots)。
+   请确保你的系统满足上述包的要求。
 
 0. Run the package installer,
    which will install an Xcode toolchain into
@@ -50,35 +46,31 @@ Package Manager may be limited due to some [outstanding issues](https://github.c
     xcrun --toolchain swift swift --version
     ~~~
 
-  * `xcodebuild`, pass the `-toolchain swift` option.
+  * 对于 `xcodebuild`，传入 `-toolchain swift` 选项。
 
-  Alternatively, you may select the toolchain on the command line by exporting
-  the `TOOLCHAINS` environment variable as follows:
+  另外，你也可以通过导出 `TOOLCHAINS` 环境变量来在命令行中选择工具链：
 
   ~~~ shell
   export TOOLCHAINS=$(plutil -extract CFBundleIdentifier raw ~/Library/Developer/Toolchains/<toolchain name>.xctoolchain/Info.plist)
   ~~~
 
 
-### Code Signing on macOS
+### macOS 上的代码签名
 
-The macOS `.pkg` files are digitally signed
-by the developer ID of the Swift open source project
-to allow verification that they have not been tampered with.
-All binaries in the package are signed as well.
+macOS 的 `.pkg` 文件由 Swift 开源项目的开发者 ID 进行数字签名，
+以验证它们未被篡改。包中的所有二进制文件也都经过签名。
 
-The Swift toolchain installer on macOS
-should display a lock icon on the right side of the title bar.
-Clicking the lock brings up detailed information about the signature.
-The signature should be produced by
-`Developer ID Installer: Swift Open Source (V9AUD2URP3)`.
+macOS 上的 Swift 工具链安装器
+应在标题栏右侧显示一个锁定图标。
+点击锁定图标可以查看签名的详细信息。
+签名应由 `Developer ID Installer: Swift Open Source (V9AUD2URP3)` 生成。
 
 <div class="warning" markdown="1">
-  If the lock is not displayed
-  or the signature is not produced by the Swift open source developer ID,
-  do not proceed with the installation.
-  Instead, quit the installer
-  and please email <swift-infrastructure@forums.swift.org>
-  with as much detail as possible,
-  so that we can investigate the problem.
+  如果没有显示锁定图标，
+  或者签名不是由 Swift 开源开发者 ID 生成的，
+  请不要继续安装。
+  请退出安装程序，
+  并发送邮件至 <swift-infrastructure@forums.swift.org>，
+  提供尽可能详细的信息，
+  以便我们调查问题。
 </div>

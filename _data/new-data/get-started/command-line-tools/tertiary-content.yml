@@ -1,20 +1,20 @@
 image: /assets/images/get-started/package.png
-image_alt: Package image for Open Source Frameworks & Packages section
-title: Explore CLIs built with Swift
+image_alt: 开源框架和包部分的包图像
+title: 探索使用 Swift 构建的命令行工具
 tertiary_cards:
   - name: swiftly
-    text: CLI tool for installing, managing, and switching between Swift toolchains.
-    link_text: Learn more
+    text: 用于安装、管理和切换 Swift 工具链的命令行工具。
+    link_text: 了解更多
     link: https://github.com/swiftlang/swiftly
   - name: DocC
-    text: CLI tool for Swift-DocC and provides support for generating and previewing documentation.
-    link_text: Learn more
+    text: 用于 Swift-DocC 的命令行工具，提供生成和预览文档的支持。
+    link_text: 了解更多
     link: https://github.com/swiftlang/swift-docc
   - name: Swift Package Manager
-    text: Tool for managing the distribution of Swift code that’s integrated with the Swift build system.
-    link_text: Learn more
+    text: 用于管理 Swift 代码分发的工具，与 Swift 构建系统集成。
+    link_text: 了解更多
     link: https://github.com/swiftlang/swift-package-manager
   - name: Vapor Toolbox
-    text: CLI tool to easily create new Vapor projects.
-    link_text: Learn more
+    text: 用于轻松创建新的 Vapor 项目的命令行工具。
+    link_text: 了解更多
     link: https://github.com/vapor/toolbox

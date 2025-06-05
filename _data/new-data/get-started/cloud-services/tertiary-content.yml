@@ -1,21 +1,21 @@
-title: Explore more server packages
+title: 探索更多服务器包
 link:
-  text: Explore more packages on Swift Package Index
+  text: 在 Swift Package Index 上探索更多包
   url: https://swiftpackageindex.com/keywords/server-side-swift
 tertiary_cards:
   - name: Swift OpenAPI Generator
-    text: Generate Swift client and server code from an OpenAPI document.
-    link_text: View on GitHub
+    text: 从 OpenAPI 文档生成 Swift 客户端和服务器代码。
+    link_text: 在 GitHub 上查看
     link: https://github.com/apple/swift-openapi-generator
   - name: SwiftNIO
-    text: Cross-platform asynchronous event-driven network application framework.
-    link_text: View on GitHub
+    text: 跨平台异步事件驱动网络应用框架。
+    link_text: 在 GitHub 上查看
     link: https://github.com/apple/swift-nio
   - name: PostgresNIO
-    text: Non-blocking, event-driven Swift client for PostgreSQL.
-    link_text: View on GitHub
+    text: 用于 PostgreSQL 的非阻塞、事件驱动 Swift 客户端。
+    link_text: 在 GitHub 上查看
     link: https://github.com/vapor/postgres-nio
   - name: Async HTTP Client
-    text: Provides an HTTP Client library built on top of SwiftNIO.
-    link_text: View on GitHub
+    text: 提供基于 SwiftNIO 构建的 HTTP 客户端库。
+    link_text: 在 GitHub 上查看
     link: https://github.com/swift-server/async-http-client

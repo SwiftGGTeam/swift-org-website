@@ -1,18 +1,18 @@
-title: Explore cloud native packages
+title: 探索云原生包
 tertiary_cards:
   - name: Swift Prometheus
-    text: Client for the Prometheus monitoring system, supporting counters, gauges and histograms.
-    link_text: View on GitHub
+    text: Prometheus 监控系统的客户端，支持计数器、仪表盘和直方图。
+    link_text: 在 GitHub 上查看
     link: https://github.com/swift-server/swift-prometheus
   - name: gRPC Swift
-    text: The Swift language implementation of gRPC.
-    link_text: View on GitHub
+    text: gRPC 的 Swift 语言实现。
+    link_text: 在 GitHub 上查看
     link: https://github.com/grpc/grpc-swift
   - name: Swift OPA
-    text:  Evaluate Open Policy Agent IR Plans compiled from Rego declarative policy. (pre-1.0 release)
-    link_text: View on GitHub
+    text: 评估从 Rego 声明式策略编译的 Open Policy Agent IR 计划。（1.0 版本前发布）
+    link_text: 在 GitHub 上查看
     link: https://github.com/open-policy-agent/swift-opa
   - name: Swift OTel 
-    text: OpenTelemetry client built for Swift observability libraries. (pre-1.0 release)
-    link_text: View on GitHub
+    text: 为 Swift 可观测性库构建的 OpenTelemetry 客户端。（1.0 版本前发布）
+    link_text: 在 GitHub 上查看
     link: https://github.com/swift-otel/swift-otel

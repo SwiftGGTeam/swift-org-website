@@ -1,7 +1,7 @@
 latest-release:
   swiftly:
     pre-code-text: |
-      To download toolchains from Swift.org, use the Swiftly toolchain installer. Swift.org toolchains support Static Linux SDK, include experimental features like Embedded Swift and support for WebAssembly.
+      要下载 Swift.org 的工具链，请使用 Swiftly 工具链安装程序。Swift.org 工具链支持静态 Linux SDK，包含实验性功能，如嵌入式 Swift 和 WebAssembly 支持。
     headline: Swiftly
     tabs:
       - label: Bash
@@ -19,14 +19,14 @@ latest-release:
           set -q SWIFTLY_HOME_DIR && . "$SWIFTLY_HOME_DIR/env.fish" || . ~/.swiftly/env.fish
     links:
       - href: 'https://raw.githubusercontent.com/swiftlang/swiftly/refs/heads/main/LICENSE.txt'
-        copy: 'License: Apache-2.0'
+        copy: '许可证：Apache-2.0'
       - href: 'https://www.swift.org/install/macos/swiftly'
-        copy: 'Instructions'
+        copy: '安装说明'
       - href: "https://www.swift.org/tools/#editors"
-        copy: "Editors"
+        copy: "编辑器"
   xcode:
-    pre-code-text: To develop with Swift for Apple platforms, download the latest version of Xcode, which is regularly refreshed with the latest Swift toolchain.
+    pre-code-text: 要为 Apple 平台开发 Swift 应用，请下载最新版本的 Xcode，它会定期更新最新的 Swift 工具链。
     headline: Xcode
     links:
       - href: 'https://developer.apple.com/xcode/'
-        copy: 'Install Xcode'
+        copy: '安装 Xcode'

@@ -1,8 +1,8 @@
 ---
 redirect_from:
-  - '/download/'
+  - "/download/"
 layout: new-layouts/install
-title: Install Swift
+title: 安装 Swift
 ---
 
 <script src="/assets/javascripts/new-javascripts/install.js"></script>

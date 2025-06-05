@@ -1,26 +1,26 @@
-headline: Learn more
+headline: 了解更多
 columns:
-  - headline: Documentation
+  - headline: 文档
     links:
-      - text: 'Build a web service with Vapor'
+      - text: '使用 Vapor 构建 Web 服务'
         url: '/getting-started/vapor-web-server/'
-      - text: 'Swift server development guides'
+      - text: 'Swift 服务器开发指南'
         url: '/documentation/server/guides/'
-      - text: 'Swift on AWS documentation'
+      - text: 'Swift on AWS 文档'
         url: 'https://aws.amazon.com/developer/language/swift/'
-  - headline: Talks
+  - headline: 演讲
     links:
-      - text: 'Explore the Swift on Server ecosystem'
+      - text: '探索 Swift 服务器生态系统'
         url: 'https://www.youtube.com/watch?v=OWNjtWUb9bs'
-      - text: 'Live coding a streaming ChatGPT proxy with Swift OpenAPI—from scratch!'
+      - text: '使用 Swift OpenAPI 从零开始构建流式 ChatGPT 代理！'
         url: 'https://www.youtube.com/watch?v=yK__6GF_tvM'
-      - text: 'Swift, Server-Side, Serverless'
+      - text: 'Swift、服务器端、无服务器'
         url: 'https://www.youtube.com/watch?v=M1POAEPATFo'
-  - headline: Community
+  - headline: 社区
     links:
-      - text: 'Server category on Swift forums'
+      - text: 'Swift 论坛服务器分类'
         url: 'https://forums.swift.org/c/server/43'
-      - text: 'Swift server meetup'
+      - text: 'Swift 服务器聚会'
         url: 'https://forums.swift.org/tag/meetup'
-      - text: 'Swift server workgroup'
+      - text: 'Swift 服务器工作组'
         url: '/sswg/'

@@ -1,12 +1,12 @@
-headline: Create embedded software with Swift
-body: Develop efficient, reliable firmware for devices like microcontrollers
+headline: 使用 Swift 创建嵌入式软件
+body: 为微控制器等设备开发高效、可靠的固件
 link:
   url: https://docs.swift.org/embedded/documentation/embedded/waystogetstarted
-  text: Get Started
+  text: 开始使用
 boxes:
-  - title: Safe
-    text: Eliminate buffer overruns and null‑pointer crashes at compile time, keeping your firmware dependable and robust.
-  - title: Interoperable
-    text: Reuse existing C/C++ drivers and SDKs with zero wrappers or runtime glue, integrating in minutes.
-  - title: Tiny
-    text: Produce meaningful programs measured in kilobytes that are capable of running on constrained devices with no hidden overhead.
+  - title: 安全
+    text: 在编译时消除缓冲区溢出和空指针崩溃，确保您的固件可靠且稳健。
+  - title: 可互操作
+    text: 无需包装器或运行时粘合代码，即可重用现有的 C/C++ 驱动程序和 SDK，几分钟内完成集成。
+  - title: 小巧
+    text: 生成以千字节计的有意义的程序，能够在资源受限的设备上运行，没有隐藏开销。

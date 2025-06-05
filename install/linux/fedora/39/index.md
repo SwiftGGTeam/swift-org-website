@@ -1,6 +1,6 @@
 ---
 layout: new-layouts/install-linux-version
-title: Install Swift
+title: 安装 Swift
 ---
 
 {% include /new-includes/assigns/linux-platform-builds.html

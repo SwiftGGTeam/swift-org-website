@@ -1,5 +1,5 @@
-headline: Build & publish containers natively
-body: Container images are the standard way to package cloud software today. Once you've packaged your server in a container image, you can deploy it on any container-based public or private cloud service, or run it locally using a desktop container runtime. <br /><br /> Swift Container Plugin allows you to build and publish container images for your Swift services in one streamlined workflow with Swift Package Manager.
+headline: 原生构建和发布容器
+body: 容器镜像如今是打包云软件的标准方式。一旦您将服务器打包成容器镜像，就可以在任何基于容器的公共或私有云服务上部署它，或使用桌面容器运行时在本地运行它。<br /><br /> Swift Container Plugin 允许您通过 Swift Package Manager 在一个简化的工作流程中构建和发布 Swift 服务的容器镜像。
 link:
   href: 'https://github.com/apple/swift-container-plugin'
   copy: Swift Container Plugin

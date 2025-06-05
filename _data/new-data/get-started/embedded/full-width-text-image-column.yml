@@ -1,9 +1,9 @@
-headline: Ergonomic and performant
+headline: 符合人体工程学且性能优异
 paragraphs:
-  - Access hardware registers confidently with Swift-MMIO’s type-safe, expressive API. Your Swift code compiles into minimal, efficient machine code—providing the power and correctness embedded developers need.
+  - 通过 Swift-MMIO 的类型安全、表达力强的 API，您可以自信地访问硬件寄存器。您的 Swift 代码会被编译成最小化、高效的机器码——为嵌入式开发者提供所需的强大功能和正确性。
 link:
   url: https://github.com/apple/swift-mmio
-  text: Learn more
+  text: 了解更多
 image:
   url: /assets/images/get-started/ergonomic-performant@2x.png 
-  alt: Ergonomic and performant
+  alt: 符合人体工程学且性能优异

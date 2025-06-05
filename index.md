@@ -1,6 +1,6 @@
 ---
 layout: new-layouts/base
-title: Welcome to Swift.org
+title: Swift 中文网
 atom: true
 ---
 
@@ -14,13 +14,13 @@ atom: true
 </div>
 <section id="what-is-swift" class="section">
     <div class="hero-content">
-        <h1>Swift is the powerful, flexible,<br /> multiplatform programming language.</h1>
-        <div class="sub-text"><h2>Fast. Expressive. Safe.</h2></div>
-        <a href="/install/" data-text="Install">Install</a>
-        <p>Tools for Linux, macOS, and Windows</p>
-        <h2>Create using Swift</h2>
+        <h1>Swift 是一款强大的跨平台通用编程语言。<br /> 新手易学，专家称心。</h1>
+        <div class="sub-text"><h2>快速、现代、安全，写起代码乐无边。</h2></div>
+        <a href="/install/" data-text="安装">安装</a>
+        <p>适用于 Linux、macOS 和 Windows 的工具</p>
+        <h2>使用 Swift 创造</h2>
     </div>
-    <nav aria-label="Get started with Swift">
+    <nav aria-label="开始使用 Swift">
         <ul class="primary-links">
             {% for item in site.data.new-data.landing.get-started-primary %}
             <li>
@@ -53,11 +53,11 @@ atom: true
 <section id="pillar-1" class="section pillar">
     <div class="pillar-wrapper content-wrapper">
         <p class="pillar-intro">
-            Swift is the only language that scales from embedded devices and kernels to apps and cloud infrastructure. It’s simple, and expressive, with incredible performance and safety. And it has unmatched interoperability with C and C++.
+            Swift 是唯一一种可以从嵌入式设备和内核扩展到应用程序和云基础设施的语言。它简单、富有表现力，具有令人难以置信的性能和安全性。并且它与 C 和 C++ 具有无与伦比的互操作性。
         </p>
         <br />
         <p class="pillar-intro">
-            It's the combination of approachability, speed, safety, and all of<br class="hide-small"/> Swift’s strengths that make it so unique.
+            正是易用性、速度、安全性以及 Swift 的所有优势的结合，使其如此独特。
         </p>
     </div>
     {% for callout in pillar1_callouts %}

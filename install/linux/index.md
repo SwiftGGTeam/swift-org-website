@@ -2,7 +2,7 @@
 redirect_from:
   - '/download/'
 layout: new-layouts/install
-title: Install Swift - Linux
+title: 安装 Swift - Linux
 ---
 
 <div class="content">
@@ -24,7 +24,7 @@ title: Install Swift - Linux
   <div class="callout">
     <div>
       <p class="content-copy">
-        <a class="content-link block" href="/install/linux/amazonlinux/2">Alternate Install Options</a>
+        <a class="content-link block" href="/install/linux/amazonlinux/2">其他安装选项</a>
       </p>
     </div>
   </div>

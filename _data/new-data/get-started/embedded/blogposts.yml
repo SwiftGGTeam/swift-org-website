@@ -1,19 +1,19 @@
-title: Read the blog
+title: 阅读博客
 secondary_cards:
-  - name: Get Started with Embedded Swift on Microcontrollers
-    logo_alt: Variety of embedded development boards
+  - name: 在微控制器上开始使用嵌入式 Swift
+    logo_alt: 各种嵌入式开发板
     logo: /assets/images/get-started/embedded-swift-micro-controllers@2x.png
-    text: Discover how Swift runs on ARM and RISC-V microcontrollers with real-world examples using the new Embedded Swift compilation mode.
-    link_text: Read more
+    text: 通过使用新的嵌入式 Swift 编译模式的实际示例，了解 Swift 如何在 ARM 和 RISC-V 微控制器上运行。
+    link_text: 阅读更多
     link: https://www.swift.org/blog/embedded-swift-examples/
 
-  - name: "Byte-sized Swift: Building Tiny Games for the Playdate"
-    logo_alt: Breakout-style grayscale game
+  - name: "Swift 小游戏：为 Playdate 构建微型游戏"
+    logo_alt: 灰度风格的打砖块游戏
     logo: /assets/images/get-started/tiny-games-playdate@2x.png
-    text: Learn how Swift was used to build tiny games on the Playdate, with full source, hardware demos, and a deep dive into Embedded Swift.
-    link_text: Read more
+    text: 了解如何使用 Swift 在 Playdate 上构建微型游戏，包括完整源代码、硬件演示和嵌入式 Swift 的深入探讨。
+    link_text: 阅读更多
     link: https://www.swift.org/blog/byte-sized-swift-tiny-games-playdate/
 
 link:
-  text: Read more
+  text: 阅读更多
   url: /blog

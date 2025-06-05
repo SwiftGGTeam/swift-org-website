@@ -1,77 +1,60 @@
-## Contributing Code
+## 贡献代码
 
-### Getting Started
+### 入门指南
 
-It is highly recommended that you become familiar with using Swift in your own projects before contributing directly to the language itself. We put together handy [Getting Started][get_started] guides with step-by-step instructions to get you up and running.
+在直接为 Swift 语言本身做贡献之前，强烈建议你先在自己的项目中熟悉使用 Swift。我们准备了详细的[入门指南][get_started]，提供了分步说明来帮助你快速上手。
 
-### Incremental Development
+### 渐进式开发
 
-The Swift project uses *small, incremental changes* as its preferred development model.  Sometimes these changes are small bug fixes. Other times, these changes are small steps along the path to reaching larger stated goals.  In contrast, long-term development branches can leave the community without a voice during development. Some additional problems with long-term branches include:
+Swift 项目采用*小型、渐进式的变更*作为其首选的开发模式。有时这些变更是小的错误修复。其他时候，这些变更是实现更大目标道路上的小步骤。相比之下，长期开发分支可能会导致社区在开发过程中失去发言权。长期分支还存在以下一些问题：
 
-* Resolving merge conflicts can take a lot of time if branch development and mainline development occur in the same pieces of code.
-* People in the community tend to ignore work on branches.
-* Very large changes are difficult to code review.
-* Branches are not routinely tested by the continuous integration infrastructure.
+* 如果分支开发和主线开发在相同的代码部分进行，解决合并冲突可能会花费大量时间。
+* 社区成员往往会忽视分支上的工作。
+* 非常大的变更很难进行代码审查。
+* 分支不会被持续集成基础设施定期测试。
 
+为了解决这些问题，Swift 采用渐进式开发风格。在可能的情况下，优先选择小的变更。我们要求贡献者在进行大型或具有侵入性的变更时遵循这种做法。以下是一些建议：
 
-To address these problems, Swift uses an incremental development style.  Small changes are preferred whenever possible.  We require contributors to follow this practice when making large or otherwise invasive changes. Some tips follow:
+* 大型或侵入性变更通常需要在主要变更之前进行一些次要变更（例如，API 清理或添加）。在进行主要变更之前，独立提交这些变更。
 
+* 如果可能，将剩余的相互关联的工作分解为互不相关的变更集。然后，定义第一个增量并就变更的开发目标达成共识。
 
-* Large or invasive changes usually have secondary changes that must be made before the large change (for example, API cleanup or addition). Commit these changes before the major change, independently of that work.
+* 使变更集中的每个变更要么是独立的（例如，修复错误），要么是朝着开发目标前进的计划系列变更的一部分。向社区解释这些关系会很有帮助。
 
-* If possible, decompose the remaining interrelated work into unrelated sets of changes. Next, define the first increment and get consensus on the development goal of the change.
-
-* Make each change in the set either stand alone (for example, to fix a bug) or part of a planned series of changes that work toward the development goal. Explaining these relationships to the community can be helpful.
-
-
-If you are interested in making a large change and feel unsure about its overall effect, please make sure to first discuss the change and reach a consensus through the [developer forums](/community/#swift-development). Then ask about the best way to go about making the change.
+如果你想进行大型变更但对其整体影响感到不确定，请务必先通过[开发者论坛](/community/#swift-development)讨论变更并达成共识。然后询问如何最好地进行这个变更。
 
 [email-devs]: mailto:swift-dev@swift.org
 
-{% comment %}
-### Contributing a Change
+### 提交信息
 
-When contributing a change, please do to the following:
+虽然我们不强制要求特定的提交信息格式，但我们建议你遵循以下在开源项目中常见的指导原则。遵循这些指导原则有助于代码审查过程、搜索提交日志和邮件格式化。从高层次来看，提交信息的内容应该传达变更的理由，而不需要深入太多细节。例如，"位没有设置正确"让审查者不清楚是哪些位以及为什么它们不"正确"。相比之下，"在'Type'中正确计算'is dependent type'位"几乎传达了变更的全部内容。
 
-- Please ensure your change applies against main (as current as possible).
-- Related, please submit your change shortly after updating to main to stay in sync.
-- Include new or updated tests that apply to your change.
+以下是关于提交信息格式本身的一些指导原则：
 
-When your change is ready, submit a [pull request](https://help.github.com/articles/using-pull-requests/).
+* 将提交信息分为单行*标题*和描述变更的单独*正文*。
+* 使标题简洁，以便在提交日志中易于阅读，并适合作为提交邮件的主题行。
+* 在仅限于代码特定部分的变更中，在行首用方括号包含[标签]---例如，"[stdlib] ..."或"[SILGen] ..."。这个标签有助于邮件过滤和提交后审查的搜索。
+* 当有正文时，用空行将其与标题分开。
+* 使正文简洁，但包含完整的推理。除非理解变更需要，否则额外的代码示例或其他细节应留在错误评论或邮件列表中。
+* 如果提交修复了错误跟踪系统中的问题，在信息中包含该问题的链接。
+* 对于文本格式和拼写，遵循与文档和代码内注释相同的规则---例如，大写字母和句号的使用。
+* 如果提交是在另一个最近提交的变更之上的错误修复，或者是补丁的还原或重新应用，请包含先前相关提交的 Git 修订号，例如"还原 abcdef，因为它导致 bug#"。
 
-Please do not add confidentiality or non-disclosure notices to the changes themselves as these conflict with the Swift license.
-{% endcomment %}
+对于这些指导原则的轻微违反，社区通常倾向于提醒贡献者这个政策，而不是还原。小的更正和遗漏可以通过向提交邮件列表发送回复来处理。
 
-### Commit Messages
+### 变更归属
 
-Although we don't enforce a strict format for commit messages, we prefer that you follow the guidelines below, which are common among open source projects.  Following these guidelines helps with the review process, searching commit logs, and email formatting. At a high level, the contents of the commit message should be to convey the rationale of the change, without delving into much detail. For example, "bits were not set right" leaves the reviewer wondering about which bits and why they weren't "right". In contrast, "Correctly compute 'is dependent type' bits in 'Type'" conveys almost all there is to the change.
+当贡献者向 Swift 子项目提交变更时，在该变更被批准后，其他具有提交权限的开发者可以代表作者提交。这样做时，保持正确的贡献归属很重要。一般来说，Git 会自动处理归属。
 
-Below are some guidelines about the format of the commit message itself:
+我们不希望源代码中充斥着像"此代码由 J. Random Hacker 编写"这样随意的归属，这会造成干扰和分散注意力。不要在源代码或文档中添加贡献者姓名。
 
-* Separate the commit message into a single-line *title* and a separate *body* that describes the change.
-* Make the title concise to be easily read within a commit log and to fit in the subject line of a commit email.
-* In changes that are restricted to a specific part of the code, include a [tag] at the start of the line in square brackets---for example, "[stdlib] ..." or "[SILGen] ...". This tag helps email filters and searches for post-commit reviews.
-* When there is a body, separate it from the title by an empty line.
-* Make body concise, while including the complete reasoning. Unless required to understand the change, additional code examples or other details should be left to bug comments or the mailing list.
-* If the commit fixes an issue in the bug tracking system, include a link to the issue in the message.
-* For text formatting and spelling, follow the same rules as documentation and in-code comments---for example, the use of capitalization and periods.
-* If the commit is a bug fix on top of another recently committed change, or a revert or reapply of a patch, include the Git revision number of the prior related commit, e.g. "Revert abcdef because it caused bug#".
+此外，除非他人已向项目提交了变更，或者你已获得代表他们提交的授权（例如，你们一起工作，你的公司授权你贡献这些变更），否则不要提交他人编写的变更。作者应该首先通过向相关项目提交拉取请求、向开发邮件列表发送邮件或添加错误跟踪器项目来提交变更。如果有人私下向你发送变更，请鼓励他们首先将其提交给适当的列表。
 
-For minor violations of these guidelines, the community normally favors reminding the contributor of this policy over reverting. Minor corrections and omissions can be handled by sending a reply to the commits mailing list.
+### 代码模板
 
-### Attribution of Changes
+如[社区概述][community]中所述，Swift.org 代码的许可证和版权保护在每个源代码文件的顶部都有说明。在极少数情况下，如果你贡献的变更包含新的源文件，请确保适当填写头部信息。
 
-When contributors submit a change to a Swift subproject, after that change is approved, other developers with commit access may commit it for the author. When doing so, it is important to retain correct attribution of the contribution. Generally speaking, Git handles attribution automatically.
-
-We do not want the source code to be littered with random attributions like "this code written by J. Random Hacker", which is noisy and distracting. Do not add contributor names to the source code or documentation.
-
-In addition, don't commit changes authored by others unless they have submitted the change to the project or you have been authorized to submit on their behalf---for example, you work together and your company authorized you to contribute the changes. The author should first either submit the change through a pull request to the relevant project, email the development list, or add a bug tracker item. If someone sends you a change privately, encourage them to submit it to the appropriate list first.
-
-### Code Templates
-
-As mentioned in the [Community Overview][community], the license and copyright protections for Swift.org code are called out at the top of every source code file.  On the rare occasion you contribute a change that includes a new source file, ensure that the header is filled out appropriately.
-
-For Swift source files the code header should look this:
+对于 Swift 源文件，代码头部应该如下所示：
 
 ~~~~swift
 //===----------------------------------------------------------------------===//
@@ -87,7 +70,7 @@ For Swift source files the code header should look this:
 //===----------------------------------------------------------------------===//
 ~~~~
 
-For C or C++ source or header files, the code header should look this:
+对于 C 或 C++ 源文件或头文件，代码头部应该如下所示：
 
 ~~~~cpp
 //===-- subfolder/Filename.h - Very brief description -----------*- C++ -*-===//
@@ -109,137 +92,122 @@ For C or C++ source or header files, the code header should look this:
 //===----------------------------------------------------------------------===//
 ~~~~
 
-The divider lines should be exactly 80 characters wide to aid in adherence to the code style guidelines.  The bottom section contains an optional description intended for generated documentation (these lines begin with `///` rather than `//`).  If there is no description, this area can be skipped.
+分隔线应该正好是 80 个字符宽，以帮助遵守代码风格指南。底部部分包含用于生成文档的可选描述（这些行以 `///` 开头，而不是 `//`）。如果没有描述，可以跳过这个区域。
 
-### Release Branch Pull Requests
+### 发布分支拉取请求
 
-A pull request targeting a release branch (`release/x.y` or `swift/release/x.y`)
-cannot be merged without a GitHub approval by a corresponding branch manager.
-In order for a change to be considered for inclusion in a release branch, the
-pull request must have:
+针对发布分支（`release/x.y` 或 `swift/release/x.y`）的拉取请求在没有相应分支管理员的 GitHub 批准的情况下不能合并。为了使变更被考虑纳入发布分支，拉取请求必须：
 
-* A title starting with a designation containing the release version number of
-  the target branch.
+* 标题以包含目标分支发布版本号的标识开头。
 
-* [This][form] form filled out in its description. An item that is not
-  applicable may be left blank or completed with an indication thereof, but must
-  not be omitted altogether.
+* 在其描述中填写[此][form]表单。不适用的项目可以留空或填写相应说明，但不能完全省略。
 
-  To switch to this template when drafting a pull request in a
-  [swiftlang][swiftlang] repository in a browser, append the
-  `template=release.md` query parameter to the current URL and refresh.
-  For example:
+  在浏览器中为 [swiftlang][swiftlang] 仓库起草拉取请求时，要切换到此模板，请在当前 URL 后附加 `template=release.md` 查询参数并刷新。
+  例如：
   ```diff
   -https://github.com/swiftlang/swift/compare/main...my-branch?quick_pull=1
   +https://github.com/swiftlang/swift/compare/main...my-branch?quick_pull=1&template=release.md
   ```
 
-[Here](https://github.com/swiftlang/swift/pull/73697) is an example.
+[这里](https://github.com/swiftlang/swift/pull/73697)是一个示例。
 
 [swiftlang]: https://github.com/swiftlang
 [form]: https://github.com/swiftlang/.github/blob/main/PULL_REQUEST_TEMPLATE/release.md?plain=1
 
-### Code Review
+### 代码审查
 
-The Swift project relies heavily on code review to improve software quality:
+Swift 项目严重依赖代码审查来提高软件质量：
 
+* 所有开发者进行的所有重要变更在提交到仓库之前都必须经过审查。较小的变更（或开发者拥有组件的变更）可以在提交后进行审查。
+* 代码审查在 GitHub 上进行（通过对拉取请求或提交的评论），并反映在相关项目的提交邮件列表中。
+* 负责代码变更的开发者也负责进行所有必要的与审查相关的更改。
 
-* All significant changes, by all developers, must be reviewed before they are committed to the repository.  Smaller changes (or changes where the developer owns the component) can be reviewed after being committed.
-* Code reviews are conducted on GitHub (through comments on pull requests or commits) and are reflected on the relevant project's commit mailing list.
-* The developer responsible for a code change is also responsible for making all necessary review-related changes.
+代码审查可以是一个迭代过程，持续到变更准备好提交为止。在变更发送出去审查后，在提交之前需要明确的批准。不要假设默许批准或通过设置截止日期来请求对补丁的主动反对。
 
+有时代码审查可能需要比你希望的时间更长，特别是对于较大的功能。以下是一些加快补丁审查时间的公认方法：
 
-Code review can be an iterative process, which continues until the change is ready to be committed. After a change is sent out for review it needs an explicit approval before it's submitted. Do not assume silent approval or request active objections to the patch by setting a deadline.
+* **审查其他人的变更。** 如果你帮助他人，每个人都会更愿意为你做同样的事情。善意是我们的货币。
+* **将你的变更拆分为多个较小的变更。** 变更越小，有人快速查看它的可能性就越高。
+* **提醒变更。** 如果很紧急，提供为什么尽快落地这个变更很重要的原因，并每隔几天提醒一次。如果不紧急，通常的礼貌提醒频率是一周一次。记住，你是在请求其他专业开发者的宝贵时间。
 
-Sometimes code reviews will take longer than you would hope for, especially for larger features. Here are some accepted ways to speed up review times for your patches:
+请注意，任何人都可以审查和提供关于变更的反馈，但只有对仓库有提交权限的人才能批准它。
 
+### 测试
 
-* **Review other people's changes.** If you help out, everybody will be more willing to do the same for you.  Goodwill is our currency.
-* **Split your change into multiple smaller changes.** The smaller your change, the higher the probability that somebody will take a quick look at it.
-* **Ping the change.** If it is urgent, provide reasons why it is important to get this change landed and ping it every couple of days. If it is not urgent, the common courtesy ping rate is one week. Remember that you're asking for valuable time from other professional developers.
+开发者需要为任何修复的错误和添加的新功能创建测试用例，并将它们与变更一起贡献。
 
-Note that anyone is welcome to review and give feedback on a change, but only people with commit access to the repository can approve it.
+* 所有功能和回归测试用例都添加到适当的测试目录中---例如，`swift/test` 目录。
+* 在最接近实际功能的抽象级别编写测试用例。例如，如果是 Swift 语言功能，用 Swift 编写；如果是 SIL 优化，用 SIL 编写。
+* 尽可能减少测试用例，特别是对于回归测试。将整个失败的程序放入 `swift/test` 是不可接受的，因为这会使所有开发者的测试变慢。请保持它们简短。
 
-### Testing
+### 质量
 
-Developers are required to create test cases for any bugs fixed and any new features added, and to contribute them along with the changes.
+人们依赖 Swift 来创建他们的生产软件。这意味着 Swift 中的错误可能会导致数千甚至数百万开发者的产品出现错误。因此，Swift 项目对质量保持高标准。任何变更在提交到主开发分支之前必须满足的最低质量标准包括：
 
-* All feature and regression test cases are added to the appropriate test directory---for example, the `swift/test` directory.
-* Write test cases at the abstraction level nearest to the actual feature. For example, if it's a Swift language feature, write it in Swift; if it's a SIL optimization, write it in SIL.
-* Reduce test cases as much as possible, especially for regressions. It's unacceptable to place an entire failing program into `swift/test` because this slows down testing for all developers. Please keep them short.
+1. 代码必须至少在一个平台上编译时没有错误或警告。
+2. 错误修复和新功能必须包含测试用例以确定任何未来的回归，或包含为什么测试用例不切实际的理由。
+3. 代码必须通过适当的测试套件---例如，Swift 编译器中的 `swift/test` 和 `swift/validation-test` 测试套件。
 
-### Quality
+此外，提交者负责解决变更可能在未来造成的任何问题。这种责任意味着你可能需要更新你的变更以：
 
-People depend on Swift to create their production software.  This means that a bug in Swift could cause bugs in thousands, even millions of developers' products.  Because of this, the Swift project maintains a high bar for quality.  The minimum quality standards that any change must satisfy before being committed to the main development branch include:
+* 确保代码在所有主要平台上都能干净地编译。
+* 修复在其他测试套件中发现的任何正确性回归。
+* 修复任何重大性能回归。
+* 修复下游 Swift 工具中的任何性能或正确性回归。
+* 修复使用 Swift 的客户代码中出现的任何性能或正确性回归。
+* 解决由于你的变更而在错误跟踪器中出现的任何错误。
 
-1. Code must compile without errors or warnings on at least one platform.
-2. Bug fixes and new features must include a test case to pinpoint any future regressions, or include a justification for why a test case would be impractical.
-3. Code must pass the appropriate test suites---for example, the `swift/test` and `swift/validation-test` test suites in the Swift compiler.
+我们更希望这些问题在提交之前得到处理，但我们理解不可能对每个提交都测试所有这些。我们的持续集成（CI）基础设施通常会找到这些问题。我们建议在接下来的日子里关注 CI 基础设施以寻找回归。如果包含你的提交的一组提交导致了失败，CI 基础设施会直接给你发邮件。你应该检查这些消息，看看它们是否是你的问题，如果是，修复这个破坏。
 
-Additionally, the committer is responsible for addressing any problems found in the future that the change may cause. This responsibility means that you may need to update your change in order to:
+明显违反这些质量标准的提交可能会被还原，特别是当变更阻止其他开发者取得进展时。在问题修复后，开发者可以重新提交变更。
 
-* Ensure the code compiles cleanly on all primary platforms.
-* Fix any correctness regressions found in other test suites.
-* Fix any major performance regressions.
-* Fix any performance or correctness regressions in the downstream Swift tools.
-* Fix any performance or correctness regressions that result in customer code that uses Swift.
-* Address any bugs that appear in the bug tracker as a result from your change.
+### 贡献者阶梯
 
-We prefer that these issues be handled before submission, but we understand that it isn’t possible to test all of this for every submission. Our continuous integration (CI) infrastructure normally finds these problems. We recommend watching the CI infrastructure throughout the next day to look for regressions. The CI infrastructure will directly email you if a group of commits that included yours caused a failure. You are expected to check those messages to see whether they are your fault and, if so, fix the breakage.
+这个贡献者阶梯定义了你在为 GitHub 上的 Swift 做贡献时可能获得的角色。每个角色都有相关的特权，这需要与贡献者社区建立信任。我们认识到 Swift 有许多不同类型的贡献者，我们感谢每一个！每个参与开源 Swift 项目的人都是*贡献者*：这可以是编写代码、在论坛上回答问题、报告或分类错误，或参与 Swift 演进过程。
 
-Commits that clearly violate these quality standards may be reverted, in particular when the change blocks other developers from making progress. The developer is welcome to recommit the change after the problem has been fixed.
+当你通过为 GitHub 上的 Swift 做贡献而攀登贡献者阶梯时，你获得新的特权，但也获得了信任和责任，你被期望履行这些责任。如果贡献者违反这种信任和责任，核心团队可能会给他们通知，并在重复违规时撤销他们的级别。我们相信一个健康的社区，并希望这种行动永远不会是必要的。
 
-### Contributor Ladder
+#### 成员
 
-This contributor ladder defines the roles you might gain while contributing to Swift on GitHub. Each role has privileges associated, which requires building trust with the community of contributors. We recognize there are many different types of contributors to Swift and we appreciate every single one! Everyone who has participated in the open source Swift project is a *Contributor*: This can be by writing code, answering questions on the forums, reporting or triaging bugs, or participating in the Swift evolution process.
+*成员*已经多次为 Swift 做出了建设性的贡献。这个角色在整个组织中持有，成为*成员*允许你在 GitHub 上的 swiftlang 组织中的所有仓库触发 CI。
 
-As you climb the contributor ladder by contributing to Swift on GitHub, you gain new privileges but also gain trust and responsibilities that you are expected to fulfill. If a contributor violates this trust and these responsibilities, the Core Team may give them a notice and upon repeated infringements revoke their level. We believe in a healthy community and hope this action will never be necessary.
+- 要求
+  - 对 Swift 项目做出多次建设性的贡献。这可以是 PR 的形式、参与 Swift 论坛、提交有价值的议题、对它们进行分类，或类似的形式。
+- 特权
+  - 能够触发 CI 测试
+  - 在你的 GitHub 个人资料上显示你在 swiftlang 组织中的成员身份
+- 提名
+  - 如果你想成为成员，请发送一封电子邮件到[代码所有者列表](mailto:code-owners@forums.swift.org)，包括你的贡献和你想要使用的 GitHub 用户名
+- 成长
+  - 展示你建设性地使用特权并继续贡献以获得提交权限。
 
-#### Member
+#### 提交权限
 
-A *Member* has constructively contributed to Swift multiple times. This role is held across the entire organization, becoming a *Member* allows you to trigger CI on all repositories in the swiftlang organization on GitHub.
+提交权限授予给有提交高质量变更记录的贡献者。如果你想获得提交权限，请发送一封电子邮件到[代码所有者列表](mailto:code-owners@forums.swift.org)，包括你想要使用的 GitHub 用户名和 5 个被接受且无需修改的非平凡拉取请求的列表。
 
-- Requirements
-  - Make multiple constructive contributions to the Swift projects. This can be in the form of PRs, engagement on the Swift Forums, filing valuable issue, triaging them, or similar.
-- Privileges
-  - Ability to trigger CI testing
-  - Show your membership in the swiftlang organization on your GitHub profile
-- Nomination
-  - If you would like to become a member, please send an email to [the code owners list](mailto:code-owners@forums.swift.org) that includes your contribution and the GitHub user name that you want to use
-- Growth
-  - Show that you use the privileges constructively and continue contributing to gain commit access.
+一旦你被授予提交权限，你将能够提交到所有托管 Swift.org 项目的 GitHub 仓库。要验证你的提交权限是否有效，请进行一个测试提交（例如，更改注释或添加空行）。以下政策适用于具有提交权限的用户：
 
-#### Commit Access
+* 你被授予对 Swift 所有部分的批准后提交权限。要获得批准，创建拉取请求。当拉取请求被批准时，你可以自己合并它。
 
-Commit access is granted to contributors with a track record of submitting high-quality changes. If you would like commit access, please send an email to [the code owners list](mailto:code-owners@forums.swift.org) with the GitHub user name that you want to use and a list of 5 non-trivial pull requests that were accepted without modifications.
+* 你可以在不首先获得批准的情况下提交明显的变更。社区期望你使用良好的判断力。例子包括还原明显损坏的补丁、更正代码注释和其他小变更。
 
-Once you’ve been granted commit access, you will be able to commit to all of the GitHub repositories that host Swift.org projects.  To verify that your commit access works, please make a test commit (for example, change a comment or add a blank line).  The following policies apply to users with commit access:
+* 你被允许在没有批准的情况下提交变更到你已贡献或已被分配责任的 Swift 部分。此类提交不得破坏构建。这是一个"信任但验证"的政策，这种性质的提交在提交后会被审查。
 
-* You are granted commit-after-approval to all parts of Swift. To get approval, create a pull request. When the pull request is approved, you may merge it yourself.
+多次违反这些政策或一次严重违反可能导致提交权限被撤销。即使有提交权限，你的变更仍然需要经过[代码审查](#code-review)。当然，我们也鼓励你审查其他人的变更。
 
-* You may commit an obvious change without first getting approval. The community expects you to use good judgment. Examples are reverting obviously broken patches, correcting code comments, and other minor changes.
+#### 代码所有者
 
-* You are allowed to commit changes without approval to the portions of Swift to which you have contributed or for which you have been assigned responsibility. Such commits must not break the build. This is a “trust but verify” policy, and commits of this nature are reviewed after being committed.
+代码所有者是被分配到 Swift 项目特定领域的个人，他们的主要职责是代码质量。Swift 项目由许多子项目组成，包括 Swift 标准库、LLDB 调试器的扩展和 Swift 包管理器等。每个子项目都会被分配一个代码所有者。代码所有者然后努力让所有贡献得到审查，收集社区的反馈，并将批准的补丁引导到产品中。
 
-Multiple violations of these policies or a single egregious violation may cause commit access to be revoked.  Even with commit access, your changes are still subject to [code review](#code-review). Of course, you are also encouraged to review other peoples’ changes.
+任何人都可以审查一段代码，我们欢迎所有感兴趣的人进行代码审查。代码审查程序不是由中央、全局政策决定的。相反，这个过程由每个代码所有者定义。
 
+任何活跃并证明自己有价值的社区成员都可以通过发帖到论坛来提供成为代码所有者，或被另一个成员提名。如果其他贡献者同意，项目负责人将做出任命并将新所有者的名字添加到代码所有者文件中。这个职位完全是自愿的，可以随时辞职。
 
-#### Code Owners
+当前代码所有者的列表可以在父 Swift 源代码树的根目录中的 `CODE_OWNERS.txt` 文件中找到。我们还维护一个邮件组，这样你可以[发送电子邮件](mailto:code-owners@forums.swift.org)给所有代码所有者。
 
-Code owners are individuals assigned to specific areas of the Swift project, with code quality their primary responsibility. The umbrella Swift project is composed of numerous sub-projects including the Swift standard library, extensions to the LLDB debugger, and the Swift package manager, to name a few. Each sub-project will be assigned a code owner.  The code owner then works to get all contributions reviewed, gather feedback from the community, and shepherd approved patches into the product.
+对于 Swift 的成功来说，可能没有什么比强大、投入的代码所有者更重要了。我们都欠他们尊重、感激和任何我们能提供的帮助。
 
-Anyone can review a piece of code, and we welcome code review from everyone that is interested. Code review procedures are not dictated by a central, global policy. Instead, the process is defined by each code owner.
+每个贡献者都有责任将自己的名字添加到项目根目录的 `CONTRIBUTORS.txt` 文件中，并维护联系信息。如果你是在你公司的保护伞下做贡献，请添加你公司的信息，不要也将自己列为额外的版权持有者。
 
-Any community member that is active and shows themselves to be valuable can offer to become a code owner via posting to the forums, or be nominated by another member.  If fellow contributors agree, the project lead will make the appointment and add the new owner's name to the code owners file. The position is completely voluntary, and can be resigned at any time.
-
-The list of current code owners can be found in the file `CODE_OWNERS.txt` in the root of the parent Swift source tree. We also maintain a mailing group so you can [send an email](mailto:code-owners@forums.swift.org) to all the code owners.
-
-There may be nothing more important to the success of Swift than strong, engaged code owners. We all owe them respect, gratitude, and whatever help we can offer.
-
-
-Each contributor is responsible for adding his or her name to the `CONTRIBUTORS.txt` file at the project's root and maintaining the contact information. If you are contributing under the umbrella of your company, please add your company’s information, and do not also list yourself as an additional copyright holder.
-
-
-[community]: /community  "Swift.org community overview"
-[get_started]: /getting-started/ "How to setup your own version of Swift"
-
+[community]: /community  "Swift.org 社区概述"
+[get_started]: /getting-started/ "如何设置你自己的 Swift 版本"

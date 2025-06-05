@@ -1,6 +1,6 @@
-- title: Fast
-  subtitle: Build with speed and performance.
-  text: Swift meets the most performance-critical needs, while allowing your code to remain expressive and approachable. Swift compiles directly to native code and provides predictable memory management.
+- title: 快速
+  subtitle: 以速度和性能构建。
+  text: Swift 满足最苛刻的性能需求，同时保持代码的表达性和易用性。Swift 直接编译为原生代码，并提供可预测的内存管理。
   code: |-
     // Vectorized check that a utf8 buffer is all ASCII
     func isASCII(utf8: Span<SIMD16<UInt8>>) -> Bool {
@@ -13,9 +13,9 @@
       .max() < 0x80
     }
 
-- title: Expressive
-  subtitle: Concise code. Powerful results.
-  text: Swift empowers you to write advanced code in a concise, readable syntax that even a beginner can understand. Swift supports object-oriented, functional, and generic programming patterns that experienced developers are familiar with. Its progressive disclosure allows you to pick up the language quickly, taking advantage of power-user features as you need them.
+- title: 富有表现力
+  subtitle: 简洁的代码，强大的结果。
+  text: Swift 让您能够用简洁、易读的语法编写高级代码，即使是初学者也能理解。Swift 支持面向对象、函数式和泛型编程模式，这些模式都是经验丰富的开发者所熟悉的。它的渐进式特性让您可以快速掌握语言，在需要时利用高级用户功能。
   code: |-
     import ArgumentParser
 
@@ -37,9 +37,9 @@
       }
     }
 
-- title: Safe
-  subtitle: Protect memory safety.
-  text: Swift prioritizes safety and eliminates entire classes of bugs and vulnerabilities by its design. Memory safety and data race safety are core features of the language, making them straightforward to integrate into your codebase. Safety is required at compile time, before your applications are ever run.
+- title: 安全
+  subtitle: 保护内存安全。
+  text: Swift 优先考虑安全性，通过其设计消除整类错误和漏洞。内存安全和数据竞争安全是语言的核心特性，使它们能够轻松集成到您的代码库中。安全性在编译时就被要求，在应用程序运行之前就得到保证。
   code: |-
     let transform = Affine2DTransformBuilder()
         .translate([10.0, 20.0].span)
@@ -53,9 +53,9 @@
       transform, rowCount, colCount, v.span, allocator)
     let uMagnitude = vec_mag(u.span)
 
-- title: Interoperable
-  subtitle: Adopt in existing code incrementally.
-  text: Swift provides unmatched interoperability with its combination of natively understanding C and C++ types without the need for foreign function interfaces, and by providing bridging for bi-directional access. Swift’s interoperability features allow you to incrementally adopt the language into existing codebases without requiring a full code rewrite.
+- title: 互操作性
+  subtitle: 在现有代码中逐步采用。
+  text: Swift 提供了无与伦比的互操作性，它原生理解 C 和 C++ 类型，无需外部函数接口，并提供双向访问的桥接。Swift 的互操作性特性允许您在现有代码库中逐步采用该语言，而无需完全重写代码。
   code: |-
     import CxxStdlib
 
@@ -69,9 +69,9 @@
       cppstring.find(.init("juice")) != std.string.npos
     }
 
-- title: Adaptable
-  subtitle: From microcontrollers to servers.
-  text: "The only language that can span from embedded and kernel, to server and apps. Swift excels no matter where it’s used: from constrained environments like firmware where every byte counts, to cloud services handling billions of requests a day."
+- title: 适应性
+  subtitle: 从微控制器到服务器。
+  text: "唯一能够从嵌入式系统和内核扩展到服务器和应用程序的语言。无论在哪里使用，Swift 都能表现出色：从每个字节都很重要的固件等受限环境，到每天处理数十亿请求的云服务。"
   code: |-
     // Configure UART by direct register manipulation 
     // using Swift MMIO. Enables RX and TX, and sets
@@ -88,10 +88,10 @@
       rw.te = .Enabled
     }
 
-- title: Open Source
-  subtitle: Contribute and get involved.
+- title: 开源
+  subtitle: 参与贡献。
   links:
     - link: https://github.com/swiftlang
-      text: View SwiftLang on GitHub
+      text: 在 GitHub 上查看 SwiftLang
     - link: https://forums.swift.org
-      text: Join the forums
+      text: 加入论坛

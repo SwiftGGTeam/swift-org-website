@@ -1,17 +1,17 @@
 latest-release:
   winget:
     pre-code-text: |
-      Install Swift via the Windows Package Manager (also known as WinGet).
+      通过 Windows 包管理器（也称为 WinGet）安装 Swift。
     headline: WinGet
     after-code-text: |
-      First, install Windows platform dependencies:
+      首先，安装 Windows 平台依赖项：
       <pre><code>winget install --id Microsoft.VisualStudio.2022.Community --exact --force --custom "--add Microsoft.VisualStudio.Component.Windows11SDK.22000 --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.VC.Tools.ARM64"</code></pre>
       <br />
-      Next, install Swift and other dependencies:
+      接下来，安装 Swift 和其他依赖项：
       <br /><br />
       <pre><code>winget install --id Swift.Toolchain -e</code></pre>
     links:
       - href: "/install/windows/winget/"
-        copy: "Additional details included in Instructions"
+        copy: "详细说明请查看安装指南"
       - href: "https://www.swift.org/tools/#editors"
-        copy: "Editors"
+        copy: "编辑器"

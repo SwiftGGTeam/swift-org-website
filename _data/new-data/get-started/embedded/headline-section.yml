@@ -1,5 +1,5 @@
-headline: Dive into Embedded Swift
-body: Explore how Embedded Swift tailors Swift’s features like generics, protocols, and async/await into a firmware‑optimized compilation mode that produces compact binaries with predictable performance for bare‑metal devices.
+headline: 深入嵌入式 Swift
+body: 探索嵌入式 Swift 如何将泛型、协议和异步/等待等 Swift 特性定制为固件优化的编译模式，为裸机设备生成具有可预测性能的紧凑二进制文件。
 link:
   href: 'https://docs.swift.org/embedded/documentation/embedded/'
-  copy: Learn more
+  copy: 了解更多
