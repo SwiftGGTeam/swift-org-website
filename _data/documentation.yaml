@@ -38,12 +38,8 @@
   - title: 服务器端Swift
     url: /documentation/server/
     description: |
-      Swift是一种通用编程语言，具有独特的特性，使其特别适合服务器应用程序开发。
-  - title: 嵌入式开发
-    url: /getting-started/embedded-swift/
-    description: |
-      Swift嵌入式开发介绍。了解如何开始。
-  - title: Swift和C++混合编程
+      Swift is a general-purpose programming language with unique characteristics that make it specifically suitable for Server applications.
+  - title: Mixing Swift and C++
     url: /documentation/cxx-interop/
     description: |
       Swift支持与C++的双向互操作性。

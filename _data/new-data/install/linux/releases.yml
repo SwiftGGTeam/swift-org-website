@@ -1,0 +1,37 @@
+latest-release:
+  swiftly:
+    pre-code-text: |
+      Swiftly 安装程序可以管理 Swift 及其依赖项。它支持在不同版本之间切换和下载更新。
+    headline: Swiftly
+    tabs:
+      - label: Bash
+        code: |-
+          curl -O https://download.swift.org/swiftly/linux/swiftly-$(uname -m).tar.gz && \
+          tar zxf swiftly-$(uname -m).tar.gz && \
+          ./swiftly init --quiet-shell-followup && \
+          . "${SWIFTLY_HOME_DIR:-~/.local/share/swiftly}/env.sh" && \
+          hash -r
+      - label: Fish
+        code: |-
+          curl -O https://download.swift.org/swiftly/linux/swiftly-(uname -m).tar.gz && \
+          tar zxf swiftly-(uname -m).tar.gz && \
+          ./swiftly init --quiet-shell-followup && \
+          set -q SWIFTLY_HOME_DIR && . "$SWIFTLY_HOME_DIR/env.fish" || . ~/.local/share/swiftly/env.fish
+    links:
+      - href: 'https://raw.githubusercontent.com/swiftlang/swiftly/refs/heads/main/LICENSE.txt'
+        copy: '许可证：Apache-2.0'
+      - href: 'https://download.swift.org/swiftly/linux/swiftly-0.4.0-dev-x86_64.tar.gz.sig'
+        copy: 'PGP：签名'
+      - href: 'https://www.swift.org/install/linux/swiftly'
+        copy: '安装说明'
+      - href: "https://www.swift.org/tools/#editors"
+        copy: "编辑器"
+  container:
+    pre-code-text: |-
+      官方容器镜像可用于在各种发行版上编译和运行 Swift。
+    headline: 容器
+    links:
+      - href: 'https://hub.docker.com/_/swift'
+        copy: 'Docker Hub'
+      - href: 'https://www.swift.org/install/linux/docker'
+        copy: '安装说明'

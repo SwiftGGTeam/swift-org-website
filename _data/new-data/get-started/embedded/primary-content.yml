@@ -1,0 +1,34 @@
+title: 探索示例项目
+primary_cards:
+  - name: Harmony 蓝牙音箱
+    logo: /assets/images/get-started/harmony-bluetooth-speaker@2x.png
+    logo_alt: Harmony
+    text: 使用 Raspberry Pi Pico W 构建带有铁磁流体可视化效果的蓝牙音箱。
+    link_text: 了解更多
+    link: https://github.com/swiftlang/swift-embedded-examples/tree/main/harmony
+
+  - name: Matter 和 HomeKit 智能灯
+    logo: /assets/images/get-started/matter-homeKit-smartlight@2x.png
+    logo_alt: Matter 和 HomeKit 智能灯
+    text: 使用 ESP32 微控制器实现可通过 HomeKit 控制的 Matter 智能灯配件。
+    link: https://github.com/swiftlang/swift-matter-examples
+    link_text: 了解更多
+
+secondary_cards:
+  - name: 交互式 UI 示例
+    logo_alt:
+    logo: /assets/images/get-started/interactive-ui-examples@2x.png
+    text: 使用流行的嵌入式图形库 LVGL 在 STM32 开发板上构建具有丰富 UI 和触摸输入功能的项目。
+    link_text: 了解更多
+    link: https://github.com/swiftlang/swift-embedded-examples/tree/main/stm32-lvgl
+
+  - name: PlaydateKit
+    logo: /assets/images/get-started/playdate-kit@2x.png
+    logo_alt: PlaydateKit
+    text: 使用 PlaydateKit 创建交互式游戏，它为 Playdate 游戏机提供了易于使用的 Swift 绑定。
+    link: https://github.com/finnvoor/PlaydateKit
+    link_text: 了解更多
+
+link:
+  url: https://github.com/swiftlang/swift-embedded-examples
+  text: 在 Github 上探索更多 Swift 嵌入式示例和模板

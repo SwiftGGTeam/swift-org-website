@@ -55,17 +55,6 @@
 
     <a href="/getting-started/swiftui" class="cta-secondary">开始教程</a>
   </li>
-
-  <li class="grid-level-1">
-    <h3>微控制器嵌入式应用</h3>
-    <p class="description">
-      学习如何使用嵌入式 Swift 创建可在嵌入式设备或模拟器上运行的应用程序。
-      <br><br>
-      此指南需要 macOS 或 Linux 环境。
-    </p>
-
-    <a href="/getting-started/embedded-swift" class="cta-secondary">开始教程</a>
-  </li>
 </ul>
 
 ---

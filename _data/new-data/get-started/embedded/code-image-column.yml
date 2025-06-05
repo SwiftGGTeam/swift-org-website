@@ -1,0 +1,30 @@
+headline: 挤进最小的空间
+image:
+  url: /assets/images/get-started/playdate-device@2x.png
+  alt: 一台 Playdate 设备
+code: |-
+  /// Updates each pixel of the current row based on
+  /// the surrounding rows in the previous frame.
+  func update(above: Row, current: Row, below: Row) {
+    var byte: UInt8 = 0
+    var bitPosition: UInt8 = 0x80
+    for column in 0..<Frame.columns {
+      let sum = above.sum(at: column)
+        + current.middleSum(at: column)
+        + below.sum(at: column)
+      let isOn = current.isOn(at: column)
+      if sum == 3 || (isOn && sum == 2) {
+        byte |= bitPosition
+      }
+      bitPosition >>= 1
+      if bitPosition == 0 {
+        self[Int(column / 8)] = ~byte
+        byte = 0
+        bitPosition = 0x80
+      }
+    } 
+  }
+body: 仅用 788 字节的编译后代码，Embedded Swift 就能在 Playdate 掌机上运行康威生命游戏——将高级抽象与低级位操作完美结合，实现实时动画效果。
+link:
+  url: https://www.swift.org/blog/byte-sized-swift-tiny-games-playdate/
+  text: 了解更多

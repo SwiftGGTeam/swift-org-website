@@ -1,0 +1,17 @@
+- title: 云服务
+  subtitle: 在 Linux 上运行高性能服务并部署到云端。
+  icon: cloud
+  data-text: 云服务
+  link: /get-started/cloud-services
+
+- title: 命令行
+  subtitle: 创建快速且内存安全的强大命令行工具。
+  icon: command-line
+  data-text: 命令行
+  link: /get-started/command-line-tools
+
+- title: 嵌入式
+  subtitle: 为微控制器等设备开发高效、可靠的固件。
+  icon: chip
+  data-text: 嵌入式
+  link: /get-started/embedded

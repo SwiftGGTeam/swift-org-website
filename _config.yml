@@ -2,7 +2,7 @@ url: https://swift.swiftgg.team
 title: SwiftGG
 description: "Swift 是一种通用编程语言，它采用现代方法处理安全性、性能和软件设计模式。"
 timezone: America/Lower_Princes
-exclude: ["README.md", "config.ru", "Gemfile", "Gemfile.lock", "Procfile", "vendor"]
+exclude: ["README.md", "config.ru", "Gemfile", "Gemfile.lock", "Procfile", "vendor", "get-started/storybook"]
 safe: false
 future: true
 
@@ -29,3 +29,4 @@ whitelist:
 
 include:
  - .well-known
+ - assets/fonts

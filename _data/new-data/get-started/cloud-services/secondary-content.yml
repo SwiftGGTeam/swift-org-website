@@ -1,0 +1,14 @@
+title: 利用 Web 框架
+secondary_cards:
+  - name: Vapor
+    logo: /assets/images/getting-started/cloud-services/secondary-card-vapor-logo.png
+    logo_alt: Vapor logo
+    text: Vapor 提供了一个安全、高性能且易于使用的基础框架，用于在 Swift 中构建 HTTP 服务器、后端和 API。
+    link_text: Vapor
+    link: https://vapor.codes
+  - name: Hummingbird
+    logo_alt: Hummingbird logo
+    logo: /assets/images/getting-started/cloud-services/humingbird@2x.png
+    text: Hummingbird 是一个轻量级、灵活的现代 Web 应用框架，它运行在基于 SwiftNIO 的服务器实现之上。
+    link_text: Hummingbird
+    link: https://hummingbird.codes

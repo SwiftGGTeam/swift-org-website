@@ -1,0 +1,97 @@
+- title: 快速
+  subtitle: 以速度和性能构建。
+  text: Swift 满足最苛刻的性能需求，同时保持代码的表达性和易用性。Swift 直接编译为原生代码，并提供可预测的内存管理。
+  code: |-
+    // Vectorized check that a utf8 buffer is all ASCII
+    func isASCII(utf8: Span<SIMD16<UInt8>>) -> Bool {
+      // combine all the code units into a single entry
+      utf8.indices.reduce(into: SIMD16()) {
+        // fold each set of code units into the result
+        $0 |= utf8[$1]
+      }
+      // check that every entry is in the ASCII range
+      .max() < 0x80
+    }
+
+- title: 富有表现力
+  subtitle: 简洁的代码，强大的结果。
+  text: Swift 让您能够用简洁、易读的语法编写高级代码，即使是初学者也能理解。Swift 支持面向对象、函数式和泛型编程模式，这些模式都是经验丰富的开发者所熟悉的。它的渐进式特性让您可以快速掌握语言，在需要时利用高级用户功能。
+  code: |-
+    import ArgumentParser
+
+    // Complete implementation of a command line tool
+    @main struct Describe: ParsableCommand {
+      @Argument(help: "The values to describe.")
+      var values: [Double] = []
+
+      mutating func run() {
+        values.sort()
+        let total = values.reduce(0, +)
+
+        print(
+          """
+          Smallest: \(values.first, default: "No value")
+          Total:    \(total)
+          Mean:     \(total / Double(values.count))
+          """)
+      }
+    }
+
+- title: 安全
+  subtitle: 保护内存安全。
+  text: Swift 优先考虑安全性，通过其设计消除整类错误和漏洞。内存安全和数据竞争安全是语言的核心特性，使它们能够轻松集成到您的代码库中。安全性在编译时就被要求，在应用程序运行之前就得到保证。
+  code: |-
+    let transform = Affine2DTransformBuilder()
+        .translate([10.0, 20.0].span)
+        .rotate(30.0)
+        .build()
+
+    let v = [11.0, 22.0, 1.0]
+
+    // Call C functions safely with Swift types
+    let u = mat_vec_mul(
+      transform, rowCount, colCount, v.span, allocator)
+    let uMagnitude = vec_mag(u.span)
+
+- title: 互操作性
+  subtitle: 在现有代码中逐步采用。
+  text: Swift 提供了无与伦比的互操作性，它原生理解 C 和 C++ 类型，无需外部函数接口，并提供双向访问的桥接。Swift 的互操作性特性允许您在现有代码库中逐步采用该语言，而无需完全重写代码。
+  code: |-
+    import CxxStdlib
+
+    // Use types from C++, like std::string, directly
+    let beverages: [std.string] = [
+      "apple juice", "grape juice", "green tea"
+    ]
+
+    let juices = beverages.filter { cppstring in
+      // and call methods directly on C++ types
+      cppstring.find(.init("juice")) != std.string.npos
+    }
+
+- title: 适应性
+  subtitle: 从微控制器到服务器。
+  text: "唯一能够从嵌入式系统和内核扩展到服务器和应用程序的语言。无论在哪里使用，Swift 都能表现出色：从每个字节都很重要的固件等受限环境，到每天处理数十亿请求的云服务。"
+  code: |-
+    // Configure UART by direct register manipulation 
+    // using Swift MMIO. Enables RX and TX, and sets
+    // baud rate to 115,200. Compiles down to an
+    // optimal assembly sequence with no overhead.
+
+    usart1.brr.modify { rw in
+      rw.raw.brr_field = 16_000_000 / 115_200
+    }
+
+    usart1.cr1.modify { rw in
+      rw.ue = .Enabled
+      rw.re = .Enabled
+      rw.te = .Enabled
+    }
+
+- title: 开源
+  subtitle: 参与贡献。
+  links:
+    - link: https://github.com/swiftlang
+      text: 在 GitHub 上查看 SwiftLang
+    - link: https://forums.swift.org
+      text: 加入论坛

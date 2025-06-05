@@ -1,0 +1,12 @@
+headline: 使用 Swift 创建命令行工具
+body: 创建快速且内存安全的强大 CLI 工具
+link:
+  url: /getting-started/cli-swiftpm/
+  text: 开始使用
+boxes:
+  - title: 简单易用
+    text: 使用 Swift 清晰的语法和轻量级的声明式风格，快速开发功能丰富的命令行工具。
+  - title: 功能强大
+    text: ArgumentParser 提供类型验证、丰富的帮助界面、shell 自动补全等功能，无需繁琐的配置。
+  - title: 安全可靠
+    text: 利用 Swift 的类型安全、内存安全和并发安全特性，无忧开发强大的 CLI 工具。

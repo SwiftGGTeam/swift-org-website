@@ -1,0 +1,26 @@
+headline: 了解更多
+columns:
+  - headline: 文档
+    links:
+      - text: Embedded Swift 文档
+        url: 'https://docs.swift.org/embedded/documentation/embedded'
+      - text: 开始使用 Embedded Swift
+        url: 'https://docs.swift.org/embedded/documentation/embedded/waystogetstarted'
+      - text: Embedded Swift 愿景文档
+        url: 'https://github.com/swiftlang/swift-evolution/blob/main/visions/embedded-swift.md'
+      - text: Embedded Swift 示例项目
+        url: 'https://github.com/swiftlang/swift-embedded-examples'
+  - headline: 演讲
+    links:
+      - text: 使用 Embedded Swift 开发小型应用
+        url: 'https://www.youtube.com/watch?v=LqxbsADqDI4'
+      - text: 构建音乐可视化器
+        url: 'https://fosdem.org/2025/schedule/event/fosdem-2025-5284-building-a-ferrofluidic-music-visualizer-with-embedded-swift/'
+      - text: 为什么 Swift 是物联网的下一个重大突破
+        url: 'https://fosdem.org/2025/schedule/event/fosdem-2025-6148-why-swift-is-the-next-big-thing-for-iot/'
+  - headline: 社区
+    links:
+      - text: Swift 论坛中的嵌入式分类
+        url: 'https://forums.swift.org/c/development/embedded/107'
+      - text: Embedded Swift 社区时间
+        url: 'https://forums.swift.org/t/embedded-swift-community-hour-may-9-2025/79647/'

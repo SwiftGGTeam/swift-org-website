@@ -1,0 +1,15 @@
+# - title: 在 Github 上关注 swiftlang
+#   link: https://github.com/swiftlang
+#   class: github
+- title: 在 X 上关注 @SwiftLang
+  link: https://x.com/swiftlang
+  class: x
+- title: 在 Bluesky 上关注 @swift.org
+  link: https://bsky.app/profile/swift.org
+  class: bluesky
+- title: 在 Mastodon 上关注 @swiftLang
+  link: https://mastodon.social/@swiftlang
+  class: mastodon
+- title: 订阅网站更新
+  link: /atom.xml
+  class: feed

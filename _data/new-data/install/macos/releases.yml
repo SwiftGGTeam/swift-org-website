@@ -1,0 +1,32 @@
+latest-release:
+  swiftly:
+    pre-code-text: |
+      要下载 Swift.org 的工具链，请使用 Swiftly 工具链安装程序。Swift.org 工具链支持静态 Linux SDK，包含实验性功能，如嵌入式 Swift 和 WebAssembly 支持。
+    headline: Swiftly
+    tabs:
+      - label: Bash
+        code: |
+          curl -O https://download.swift.org/swiftly/darwin/swiftly.pkg && \
+          installer -pkg swiftly.pkg -target CurrentUserHomeDirectory && \
+          ~/.swiftly/bin/swiftly init --quiet-shell-followup && \
+          . "${SWIFTLY_HOME_DIR:-~/.swiftly}/env.sh" && \
+          hash -r
+      - label: Fish
+        code: |
+          curl -O https://download.swift.org/swiftly/darwin/swiftly.pkg && \
+          installer -pkg swiftly.pkg -target CurrentUserHomeDirectory && \
+          ~/.swiftly/bin/swiftly init --quiet-shell-followup && \
+          set -q SWIFTLY_HOME_DIR && . "$SWIFTLY_HOME_DIR/env.fish" || . ~/.swiftly/env.fish
+    links:
+      - href: 'https://raw.githubusercontent.com/swiftlang/swiftly/refs/heads/main/LICENSE.txt'
+        copy: '许可证：Apache-2.0'
+      - href: 'https://www.swift.org/install/macos/swiftly'
+        copy: '安装说明'
+      - href: "https://www.swift.org/tools/#editors"
+        copy: "编辑器"
+  xcode:
+    pre-code-text: 要为 Apple 平台开发 Swift 应用，请下载最新版本的 Xcode，它会定期更新最新的 Swift 工具链。
+    headline: Xcode
+    links:
+      - href: 'https://developer.apple.com/xcode/'
+        copy: '安装 Xcode'

@@ -1,10 +1,8 @@
 ---
 redirect_from:
   - "/download/"
-layout: page-wide
+layout: new-layouts/install
 title: 安装 Swift
 ---
 
-{% include install/_os_tabs.md %}
-
-<script src="/assets/javascripts/install.js"></script>
+<script src="/assets/javascripts/new-javascripts/install.js"></script>

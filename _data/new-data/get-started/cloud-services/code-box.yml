@@ -1,0 +1,8 @@
+headline: 在云端开发和部署
+code: $ docker pull swift
+after-code-text: Swift 为多种架构提供官方容器镜像，使在 Linux 上开发和部署到生产环境变得简单。我们提供了现成的指南，可用于部署到 Kubernetes、AWS、GCP、Digital Ocean 等多种环境。
+links:
+  - href: '/install/linux/docker/'
+    copy: '查看 Docker 安装指南'
+  - href: '/documentation/server/guides/deployment.html'
+    copy: '查看部署指南'

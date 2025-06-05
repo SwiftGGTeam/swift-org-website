@@ -1,0 +1,12 @@
+headline: 使用 Swift 创建云服务
+body: 在 Linux 上运行高性能服务并部署到云端
+link:
+  url: "https://docs.swift.org/getting-started-swift-server/tutorials/getting-started-swift-server/"
+  text: 开始使用
+boxes:
+  - title: 高性能
+    text: Swift 具有出色的内存效率，无需垃圾收集器即可运行，以可预测的速度运行，同时使用更少的资源。
+  - title: 轻量级
+    text: Swift 具有最小的预热操作，使其成为运行云服务的理想选择，这些服务经常被重新调度到虚拟机和容器中。
+  - title: 可扩展
+    text: Swift 能够支持互联网规模的云服务，每天处理数十亿请求，能够运行大型生产工作负载。

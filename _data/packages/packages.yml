@@ -4,69 +4,56 @@ categories:
     brief: "精心挑选的新颖有趣的包集合,这些包正在被 Swift 社区讨论。浏览列表以了解最新动态,以及如何提名包加入此版块。"
     description: 这个展示区展示了 Swift 社区正在讨论的新颖有趣的包。此版块的包选择是一个编辑过程,通过[Swift 论坛的这个主题](https://forums.swift.org/t/68168)组织,并由 [Swift 网站工作组](https://www.swift.org/website-workgroup/)策划。
     packages:
-      - name: GestureButton
-        description: GestureButton 让你可以在单个 SwiftUI 按钮中使用多个特定手势的动作。可以为点击、长按和拖动等手势自定义动作,并支持灵活的延迟和超时设置。
-        owner: Daniel Saidi
-        swift_compatibility: 6.0+
-        platform_compatibility:
-          - Apple
-        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
-        license: MIT
-        url: https://swiftpackageindex.com/danielsaidi/GestureButton
-        note: 在 [Swift Package Indexing 第51集](https://share.transistor.fm/s/257bd1fa){:target='_blank'} 中讨论。
-      - name: JSONPatch
-        description: "Swift μ-framework 用于创建符合 RFC6902 标准的 JSON 补丁对象，支持使用键路径进行添加、删除、替换、移动、复制和测试等操作。"
-        owner: Peter Ringset
-        swift_compatibility: 5.10+
-        platform_compatibility:
-          - Apple
-          - Linux
-        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS) 和 Linux
-        license: MIT
-        url: https://swiftpackageindex.com/peterringset/JSONPatch
-        note: 在 [Swift Package Indexing 第51集](https://share.transistor.fm/s/257bd1fa){:target='_blank'} 中讨论。
-      - name: xctest-dynamic-overlay
-        description: Swift Issue Reporting 允许将代码中的问题报告为运行时警告、断点或断言，并将它们转换为测试失败，帮助调试并确保测试覆盖率。
-        owner: Point-Free
-        swift_compatibility: 5.9+
-        platform_compatibility:
-          - Apple
-          - Linux
-        platform_compatibility_tooltip: Apple (macOS) 和 Linux
-        license: MIT
-        url: https://swiftpackageindex.com/aus-der-Technik/FileMonitor
-        note: 通过[这个论坛帖子](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/125){:target='_blank'}提名。
-      - name: Versionator
-        description: 一个插件，用于收集版本信息并将其嵌入到包/可执行文件中，允许在运行时检索。生成 `Version.swift`、`Info.plist` 和头文件。
-        owner: Elegant Chaos
+      - name: Anodize
+        description: Adds type safety to Metal shaders, enabling Swift to interact with
+          Metal kernels without managing binding indices. Enhances code safety and simplifies
+          GPU kernel integration.
+        owner: Audulus LLC
         swift_compatibility: 6.0+
         platform_compatibility:
           - Apple
         platform_compatibility_tooltip: Apple (macOS)
         license: MIT
-        url: https://swiftpackageindex.com/elegantchaos/Versionator
-        note: 在 [Swift Package Indexing 第49集](https://share.transistor.fm/s/c3ea4e1a){:target='_blank'} 中讨论。
-      - name: Numerix
-        description: 提供用于线性代数和数值计算的 Complex、Vector、Matrix 和 ShapedArray 结构，使用 Accelerate 框架进行高性能计算。
-        owner: Gavin Wiggins
+        url: https://swiftpackageindex.com/audulus/Anodize
+        note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/123){:target='_blank'}.
+      - name: Noora
+        description: Enhances terminal aesthetics for Swift CLIs with a customizable design
+          system, improving consistency and readability in command-line interfaces.
+        owner: Tuist
         swift_compatibility: 6.0+
         platform_compatibility:
           - Apple
-        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
+          - Linux
+        platform_compatibility_tooltip: Apple (macOS, visionOS) and Linux
         license: MIT
-        url: https://swiftpackageindex.com/wigging/numerix
-        note: 通过[这个论坛帖子](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/119){:target='_blank'}提名。
-      - name: swift-zip-archive
-        description: 一个用于读取和编辑 zip 归档的库。支持从磁盘和内存缓冲区读取和写入标准或密码保护的 zip 文件。
-        owner: Adam Fowler
+        url: https://swiftpackageindex.com/tuist/Noora
+        note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/120){:target='_blank'}.
+      - name: swift-aws-lambda-runtime
+        description: Facilitates building serverless functions in Swift for AWS Lambda,
+          offering features like JSON handling, response streaming, and background tasks,
+          while emphasizing performance, safety, and developer control.
+        owner: Swift on Server
+        swift_compatibility: 5.9+
+        platform_compatibility:
+          - Apple
+          - Linux
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) and
+          Linux
+        license: Apache 2.0
+        url: https://swiftpackageindex.com/swift-server/swift-aws-lambda-runtime
+        note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/127){:target='_blank'}.
+      - name: swift-package-registry-service
+        description: An implementation of the Swift Package Registry Service which proxies
+          the Github API.
+        owner: CrowdStrike
         swift_compatibility: 6.0+
         platform_compatibility:
           - Apple
         platform_compatibility_tooltip: Apple (macOS, visionOS)
         license: MIT
-        url: https://swiftpackageindex.com/hidden-spectrum/swift-translate
-        note: 通过[这个论坛帖子](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/76){:target='_blank'}提名。
-  - name: 包含宏的包
+        url: https://swiftpackageindex.com/CrowdStrike/swift-package-registry-service
+        note: Nominated via [this forum post](https://forums.swift.org/t/nominations-for-the-packages-community-showcase-on-swift-org/68168/128){:target='_blank'}.
+  - name: Packages with Macros
     slug: macros
     brief: Swift 5.9 新增功能，Swift 包可以包含宏目标。浏览展示此功能的包选择。
     description: 宏是 Swift 5.9 中的新功能，在编译时转换源代码，让你避免编写重复代码。[了解更多关于创建宏的信息](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/macros/){:target='_blank'}或查看这些包含宏目标的包。
@@ -100,7 +87,8 @@ categories:
         platform_compatibility:
           - Apple
           - Linux
-        platform_compatibility_tooltip: Apple (macOS) 和 Linux
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) and
+          Linux
         license: Apache 2.0
         url: https://swiftpackageindex.com/swiftlang/swift-testing
       - name: Defaults
@@ -122,8 +110,9 @@ categories:
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) 和 Linux
         license: MIT
         url: https://swiftpackageindex.com/pointfreeco/swift-dependencies
-      - name: swift-perception
-        description: 为早期版本的 Swift 提供观察工具，模仿 `@Observable` 并提供与较新的 Swift 观察功能的兼容性。
+      - name: swift-case-paths
+        description: CasePaths extends the functionality of key paths to enum cases, allowing
+          for the extraction, modification, and testing of associated values in enums.
         owner: Point-Free
         swift_compatibility: 5.9+
         platform_compatibility:
@@ -131,8 +120,8 @@ categories:
           - Linux
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) 和 Linux
         license: MIT
-        url: https://swiftpackageindex.com/pointfreeco/swift-perception
-  - name: 服务器
+        url: https://swiftpackageindex.com/pointfreeco/swift-case-paths
+  - name: Server
     slug: server
     brief: 需要帮助构建服务器端 Swift 应用程序吗？浏览这些可以帮你入门的包。
     description: 哪些包可以帮助你为你的应用或使用 HTML 构建的网站搭建一个一流的后端服务器？Swift 有多个成熟的后端框架、ORM、数据库连接包等。
@@ -163,7 +152,7 @@ categories:
       - name: hummingbird
         description: Hummingbird 是一个用 Swift 编写的轻量级、灵活的服务器框架。它由 HTTP 服务器、Web 应用程序框架和扩展模块组成。
         owner: Hummingbird
-        swift_compatibility: 5.9+
+        swift_compatibility: 5.10+
         platform_compatibility:
           - Apple
           - Linux
@@ -177,7 +166,8 @@ categories:
         platform_compatibility:
           - Apple
           - Linux
-        platform_compatibility_tooltip: Apple (iOS, macOS, watchOS, tvOS) 和 Linux
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) and
+          Linux
         license: MIT
         url: https://swiftpackageindex.com/vapor/fluent
       - name: MongoKitten
@@ -190,17 +180,19 @@ categories:
         platform_compatibility_tooltip: Apple (iOS, macOS) 和 Linux
         license: MIT
         url: https://swiftpackageindex.com/orlandos-nl/MongoKitten
-      - name: SwiftyBeaver
-        description: SwiftyBeaver 是一个灵活、多彩、轻量级的 Swift 日志库。它支持控制台、文件和云目标，非常适合服务器端 Swift。
-        owner: SwiftyBeaver
-        swift_compatibility: 5.8+
+      - name: routing-kit
+        description: RoutingKit provides a high-performance router and routing types for
+          applications and libraries, such as Vapor.
+        owner: Vapor
+        swift_compatibility: 5.10+
         platform_compatibility:
           - Apple
           - Linux
-        platform_compatibility_tooltip: Apple (iOS, macOS, watchOS, tvOS) 和 Linux
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) and
+          Linux
         license: MIT
-        url: https://swiftpackageindex.com/SwiftyBeaver/SwiftyBeaver
-  - name: 网络
+        url: https://swiftpackageindex.com/vapor/routing-kit
+  - name: Networking
     slug: networking
     brief: 浏览可以扩展和增强 Swift 核心网络库的包集合。
     description: "涵盖从核心网络库的抽象到功能齐全的 HTTP 客户端再到底层网络库的所有内容。如果你需要在 URLSession 之上添加一点或很多功能,你都可以在这里找到。"
@@ -221,13 +213,23 @@ categories:
       - name: swift-nio
         description: SwiftNIO 是一个用于构建高性能协议服务器和客户端的跨平台网络框架。它使用非阻塞 I/O 高效处理多个连接。
         owner: Apple
-        swift_compatibility: 5.9+
+        swift_compatibility: 5.10+
         platform_compatibility:
           - Apple
           - Linux
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) 和 Linux
         license: Apache 2.0
         url: https://swiftpackageindex.com/apple/swift-nio
+      - name: Moya
+        description: Moya is a network abstraction layer for Alamofire. It simplifies
+          network calls and provides compile-time checking for API endpoints.
+        owner: Moya
+        swift_compatibility: 5.9+
+        platform_compatibility:
+          - Apple
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
+        license: MIT
+        url: https://swiftpackageindex.com/Moya/Moya
       - name: Pulse
         description: Pulse 是一个强大的 Apple 平台日志系统。它记录和检查日志和网络请求，并允许实时查看和共享。
         owner: Alex Grebenyuk
@@ -237,15 +239,6 @@ categories:
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
         license: MIT
         url: https://swiftpackageindex.com/kean/Pulse
-      - name: Moya
-        description: Moya 是 Alamofire 的网络抽象层。它简化网络调用，并为 API 端点提供编译时检查。
-        owner: Moya
-        swift_compatibility: 5.8+
-        platform_compatibility:
-          - Apple
-        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
-        license: MIT
-        url: https://swiftpackageindex.com/Moya/Moya
       - name: FlyingFox
         description: FlyingFox 支持创建轻量级、并发的 HTTP 服务器，支持 WebSockets 和静态文件服务。它使用非阻塞 BSD 套接字，通过 Swift 并发处理每个连接。
         owner: Simon Whitty
@@ -256,26 +249,18 @@ categories:
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) 和 Linux
         license: MIT
         url: https://swiftpackageindex.com/swhitty/FlyingFox
-      - name: RealHTTP
-        description: RealHTTP 是一个轻量级、基于异步的 Swift HTTP 库。它旨在提供一个易于使用、功能强大的 HTTP 客户端，具有 async/await 支持、请求自定义、响应验证等功能。
-        owner: Immobiliare Labs
-        swift_compatibility: 5.8+
+      - name: Networking
+        description: Networking is a Swift library for making network requests with a
+          straightforward API. It supports faking requests, caching images, and various
+          types of authentication.
+        owner: Elvis Nunez
+        swift_compatibility: 5.9+
         platform_compatibility:
           - Apple
-        platform_compatibility_tooltip: Apple (iOS, macOS, watchOS, tvOS)
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
         license: MIT
-        url: https://swiftpackageindex.com/immobiliare/RealHTTP
-      - name: Socket
-        description: BlueSocket 是一个 Swift 的套接字框架。它提供创建、关闭和监听套接字的功能。
-        owner: Kitura
-        swift_compatibility: 5.8+
-        platform_compatibility:
-          - Apple
-          - Linux
-        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) 和 Linux
-        license: Apache 2.0
-        url: https://swiftpackageindex.com/Kitura/BlueSocket
-  - name: 测试
+        url: https://swiftpackageindex.com/3lvis/Networking
+  - name: Testing
     slug: testing
     brief: "如果你想提升项目的测试水平,看看这些可能有用的包。"
     description: "无论你是在寻找 XCTest 的扩展还是完全不同的测试方法,这些包都能帮到你。"
@@ -290,33 +275,41 @@ categories:
         platform_compatibility:
           - Apple
           - Linux
-        platform_compatibility_tooltip: Apple (macOS) 和 Linux
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) and
+          Linux
         license: Apache 2.0
         url: https://swiftpackageindex.com/swiftlang/swift-testing
-      - name: swift-custom-dump
-        description: 一组用于调试、比较和测试 Swift 数据结构的工具。包括用于精细输出的 `customDump`、用于文本比较的 `diff` 和用于测试断言的 `XCTAssertNoDifference`。
-        owner: Point-Free
-        swift_compatibility: 5.9+
-        platform_compatibility:
-          - Apple
-          - Linux
-        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) 和 Linux
-        license: MIT
-        url: https://swiftpackageindex.com/pointfreeco/swift-custom-dump
       - name: swift-snapshot-testing
-        description: SnapshotTesting 是一个令人愉快的 Swift 快照测试库。它允许你轻松比较视图、视图控制器、URL 请求和可编码值的快照。它支持广泛的快照策略，并且高度可配置。
+        description: SnapshotTesting is a delightful Swift snapshot testing library. It
+          allows you to easily compare snapshots of views, view controllers, URL requests,
+          and encodable values. It supports a wide range of snapshot strategies and is
+          highly configurable.
         owner: Point-Free
         swift_compatibility: 5.9+
         platform_compatibility:
           - Apple
           - Linux
-        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) 和 Linux
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) and
+          Linux
         license: MIT
         url: https://swiftpackageindex.com/pointfreeco/swift-snapshot-testing
+      - name: swift-custom-dump
+        description: A collection of tools for debugging, diffing, and testing data structures
+          in Swift. Includes `customDump` for refined output, `diff` for textual diffs,
+          and `XCTAssertNoDifference` for test assertions.
+        owner: Point-Free
+        swift_compatibility: 5.9+
+        platform_compatibility:
+          - Apple
+          - Linux
+        platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS) and
+          Linux
+        license: MIT
+        url: https://swiftpackageindex.com/pointfreeco/swift-custom-dump
       - name: Quick
         description: Quick 是一个用于 Swift 和 Objective-C 的行为驱动开发框架。它受到 RSpec、Specta 和 Ginkgo 的启发。它附带 Nimble，一个用于测试的匹配器框架。
         owner: Quick
-        swift_compatibility: 5.8+
+        swift_compatibility: 5.9+
         platform_compatibility:
           - Apple
           - Linux
@@ -326,7 +319,7 @@ categories:
       - name: OCMockito
         description: OCMockito 是 Mockito 的 Objective-C 实现，允许你创建、验证和存根模拟对象。它与其他模拟框架有一些关键区别，使测试不那么脆弱，更易于阅读。
         owner: Jon Reid
-        swift_compatibility: 5.8+
+        swift_compatibility: 5.9+
         platform_compatibility:
           - Apple
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
@@ -335,7 +328,7 @@ categories:
       - name: OCHamcrest
         description: OCHamcrest 是一个 Objective-C 模块，提供用于创建灵活测试断言和用户输入验证的匹配器库。
         owner: Hamcrest
-        swift_compatibility: 5.8+
+        swift_compatibility: 5.9+
         platform_compatibility:
           - Apple
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
@@ -362,22 +355,12 @@ categories:
       - name: CocoaLumberjack
         description: CocoaLumberjack 是一个快速、简单、功能强大且灵活的日志框架，允许同时记录到多个目标。
         owner: CocoaLumberjack
-        swift_compatibility: 5.8+
+        swift_compatibility: 5.9+
         platform_compatibility:
           - Apple
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
         license: BSD 3-Clause
         url: https://swiftpackageindex.com/CocoaLumberjack/CocoaLumberjack
-      - name: SwiftyBeaver
-        description: SwiftyBeaver 是一个灵活、多彩、轻量级的 Swift 日志库。它支持控制台、文件和云目标，非常适合服务器端 Swift。
-        owner: SwiftyBeaver
-        swift_compatibility: 5.8+
-        platform_compatibility:
-          - Apple
-          - Linux
-        platform_compatibility_tooltip: Apple (iOS, macOS, watchOS, tvOS) 和 Linux
-        license: MIT
-        url: https://swiftpackageindex.com/SwiftyBeaver/SwiftyBeaver
       - name: Datadog
         description: 这个库提供 Swift 和 Objective-C SDK 来与 Datadog 交互。它包括日志收集、跟踪收集和 RUM 事件收集的功能。
         owner: Datadog, Inc.
@@ -396,6 +379,18 @@ categories:
         platform_compatibility_tooltip: Apple (iOS, macOS, visionOS, watchOS, tvOS)
         license: MIT
         url: https://swiftpackageindex.com/kean/Pulse
+      - name: SwiftyBeaver
+        description: SwiftyBeaver is a flexible, colorful, lightweight logging library
+          for Swift. It supports console, file, and cloud destinations and is ideal for
+          server-side Swift.
+        owner: SwiftyBeaver
+        swift_compatibility: 5.9+
+        platform_compatibility:
+          - Apple
+          - Linux
+        platform_compatibility_tooltip: Apple (iOS, macOS, watchOS, tvOS) and Linux
+        license: MIT
+        url: https://swiftpackageindex.com/SwiftyBeaver/SwiftyBeaver
       - name: Wormholy
         description: Wormholy 是一个用于 iOS 网络调用的调试工具。它记录应用程序流量，显示请求和响应内容，并帮助调试和修复错误。它与 NSURLSession 和外部库（如 Alamofire 和 AFNetworking）一起工作。
         owner: Paolo Musolino

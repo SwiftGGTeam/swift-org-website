@@ -1,0 +1,26 @@
+headline: 了解更多
+columns:
+  - headline: 文档
+    links:
+      - text: '使用 Vapor 构建 Web 服务'
+        url: '/getting-started/vapor-web-server/'
+      - text: 'Swift 服务器开发指南'
+        url: '/documentation/server/guides/'
+      - text: 'Swift on AWS 文档'
+        url: 'https://aws.amazon.com/developer/language/swift/'
+  - headline: 演讲
+    links:
+      - text: '探索 Swift 服务器生态系统'
+        url: 'https://www.youtube.com/watch?v=OWNjtWUb9bs'
+      - text: '使用 Swift OpenAPI 从零开始构建流式 ChatGPT 代理！'
+        url: 'https://www.youtube.com/watch?v=yK__6GF_tvM'
+      - text: 'Swift、服务器端、无服务器'
+        url: 'https://www.youtube.com/watch?v=M1POAEPATFo'
+  - headline: 社区
+    links:
+      - text: 'Swift 论坛服务器分类'
+        url: 'https://forums.swift.org/c/server/43'
+      - text: 'Swift 服务器聚会'
+        url: 'https://forums.swift.org/tag/meetup'
+      - text: 'Swift 服务器工作组'
+        url: '/sswg/'

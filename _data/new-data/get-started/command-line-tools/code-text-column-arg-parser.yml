@@ -1,0 +1,25 @@
+headline: 使用 Argument Parser 构建简单的命令行工具
+paragraphs:
+  - '您可以使用 Swift Argument Parser 库快速构建功能完整的命令行界面。通过创建带有常规 Swift 属性的类型来定义命令。链接多个命令以创建丰富的命令层次结构。'
+  - 'ArgumentParser 提供详细的帮助界面、清晰的错误消息（包含近似匹配检查）、广泛的定制选项等功能。'
+link:
+  text: Swift Argument Parser
+  url: https://github.com/apple/swift-argument-parser
+code: |-
+  import ArgumentParser
+  @main
+  struct Repeat: ParsableCommand {
+    @Argument(help: "The phrase to repeat.")
+    var phrase: String
+    
+    @Option(help: "The number of times to repeat 'phrase'.")
+    var count: Int? = nil
+    
+    mutating func run() throws {
+      let repeatCount = count ?? .max
+      
+      for i in 1...repeatCount {
+        print(phrase)
+      }
+    }
+  }

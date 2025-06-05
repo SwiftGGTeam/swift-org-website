@@ -1,0 +1,32 @@
+headline: 使用 Subprocess 处理进程执行
+paragraphs:
+  - 'Subprocess 是一个 Swift 库，它提供了精确、符合语言习惯的方式来启动和管理子进程。您可以异步地完整收集子进程的输出，或者使用 AsyncSequence 实时流式处理，这使得按行处理实时到达的输出变得简单。'
+  - 'Subprocess 让您能够精细控制环境变量、参数和许多平台特定的参数，同时充分利用 Swift 的并发特性和类型安全。无论您是在构建 CLI 工具还是服务器端 Swift 应用程序，swift-subprocess 都能完美集成。'
+link:
+  text: Subprocess
+  url: https://github.com/swiftlang/swift-subprocess
+code: |-
+  import Subprocess
+
+  // Launch Nginx and monitor the log file in parallel
+  async let monitorResult = run(
+      .path("/usr/bin/tail"),
+      arguments: ["-f", "/path/to/nginx.log"]
+  ) { execution, standardOutput in
+      for try await line in standardOutput.lines(encoding: UTF8.self) {
+          // Parse the log text
+          if line.contains("500") {
+              // Oh no, 500 error
+          }
+      }
+  }
+
+  let launchResult = try await run(
+      .name("nginx"), // Lookup executable by name
+      arguments: ["-c", "/path/to/nginx.conf"]
+  )
+  if !launchResult.terminationStatus.isSuccess {
+      print("Nginx failed to launch: \(launchResult.terminationStatus)")
+  } else {
+      print("Nginx launched with PID \(launchResult.processIdentifier)")
+  }

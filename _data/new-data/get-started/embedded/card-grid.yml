@@ -1,0 +1,19 @@
+title: 支持多种嵌入式平台
+hero_card:
+  url: /assets/images/get-started/embedded-hero@2x.png
+  alt: "A sample Swift code snippet with a blinking microcontroller next to it"
+tertiary_cards:
+  - name: "与 Raspberry Pi Pico SDK 集成"
+    text: "利用无缝互操作性，直接从您的 Swift 代码中使用 Pico SDK 的现有 API。"
+    link_text: 打开指南
+    link: https://docs.swift.org/embedded/documentation/embedded/picoguide
+  - name: "在 STM32 芯片上实现裸机运行"
+    text: "为了获得最大控制权，您可以完全裸机运行并使用 Swift MMIO 来操作硬件设备。"
+    link_text: 打开指南
+    link: https://docs.swift.org/embedded/documentation/embedded/stm32baremetalguide
+text:
+  Embedded Swift 不限于特定的硬件设备或平台。它具有很强的通用性，可以与现有的 SDK 和构建系统集成，
+  也可以用于纯裸机开发。Swift 工具链可以支持大多数常见的 ARM 和 RISC-V 芯片。
+link:
+  url: https://docs.swift.org/embedded/documentation/embedded/integratingwithplatforms
+  text: 了解更多关于与其他平台和构建系统的集成

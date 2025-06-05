@@ -1,0 +1,10 @@
+- header: 文档
+  url: /documentation/
+- header: 社区
+  url: /community/
+- header: 软件包
+  url: /packages/
+- header: 博客
+  url: /blog/
+- header: 翻译组
+  url: /swiftGG-workgroup/
