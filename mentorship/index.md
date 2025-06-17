@@ -29,8 +29,8 @@ Swift 导师计划旨在通过经验丰富的开发者直接指导，鼓励开�
 
 2025年兴趣调查提交将按照上述时间表开放。如果您有兴趣参与：
 
-* 作为导师，请填写兴趣调查[这里][mentor survey]。
-* 作为学员，请填写兴趣调查[这里][mentee survey]。
+* 作为导师，请[点击这里][mentor survey]填写兴趣调查。
+* 作为学员，请[点击这里][mentee survey]填写兴趣调查。
 
 [mentor survey]: https://essentials.applesurveys.com/jfe/form/SV_0UuJQKrOLDnui7I
 [mentee survey]: https://essentials.applesurveys.com/jfe/form/SV_55Z5pywWOkKTnZY
