@@ -1,6 +1,6 @@
 ---
 layout: new-layouts/base
-title: Swift 中文网
+title: Swift 编程语言
 atom: true
 ---
 
