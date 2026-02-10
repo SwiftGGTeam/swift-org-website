@@ -98,16 +98,7 @@
           name: community-participation
     - section: 工作组
     - title: SwiftGG 翻译组
-      url: /swiftGG-workgroup/
-      sections:
-        - title: 章程
-          name: charter
-        - title: 成员构成
-          name: membership
-        - title: 交流方式
-          name: communication
-        - title: 社区参与
-          name: community-participation
+      url: https://swiftgg.team/translation/
     - title: 贡献者体验
       url: /contributor-experience-workgroup/
     - title: 服务器
