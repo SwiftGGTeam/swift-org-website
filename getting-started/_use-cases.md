@@ -7,7 +7,7 @@
       如果您刚开始编程之旅，Swift 是一个很好的入门语言。想要快速了解这门语言，请查看 Swift 编程语言书籍中的这个介绍章节。
     </p>
 
-    <a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/guidedtour/" class="cta-secondary">阅读 Swift 导览</a>
+    <a href="https://doc.swiftgg.team/documentation/the-swift-programming-language/guidedtour" class="cta-secondary">阅读 Swift 导览</a>
   </li>
 </ul>
 
